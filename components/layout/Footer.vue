@@ -36,6 +36,9 @@ export default Vue.extend({
   padding: 20px 0;
   p {
     font-size: 16px;
+    @media (max-width: 425px) {
+      font-size: 14px;
+    }
   }
 }
 </style>

@@ -1,27 +1,34 @@
 <template>
-  <div class="home_container">
+  <div class="home_container section">
     <div class="card_container">
       <el-card shadow="always" class="slider_card">
         <el-carousel
           indicator-position="outside"
-          height="500px"
           arrow="never"
-          :interval="10000"
+          class="el_carousel_outer"
+          :interval="50000"
+          height="500px"
+          trigger="click"
         >
           <el-carousel-item
-            v-for="item in cardContent"
-            :key="item.text"
+            v-for="(content, index) in carouselContent"
+            :key="index"
             class="carousel_item"
           >
             <div class="slider_content">
-              <div class="w-50 pr-10">
-                <img :src="item.img" alt="" width="100%" height="100%" />
+              <div class="slider_content_img pr-10">
+                <img
+                  :src="getImg(content.img)"
+                  alt=""
+                  width="100%"
+                  height="100%"
+                />
                 <!-- :style="{ backgroundImage: 'url(' + item.img + ')' }"
                 class="slider_img w-50" -->
               </div>
-              <div class="w-50 pl-10 pt-30">
+              <div class="slider_content_text pl-10 pt-30">
                 <h2 class="pt-20 pl-20" style="color: #ff6a3e">
-                  {{ item.text }}
+                  {{ content.text }}
                 </h2>
               </div>
             </div>
@@ -29,7 +36,7 @@
         </el-carousel>
       </el-card>
     </div>
-    <div>
+    <div class="logistics_container">
       <section class="logistic_header_container">
         <!-- <el-divider > -->
         <h2 class="logistic_header">Logistics Solutions</h2>
@@ -42,29 +49,55 @@
           the supply chain to the other.
         </p>
       </section>
-      <el-row class="home_page_cards mt-30">
-        <el-col v-for="(o, index) in 3" :key="o" :span="7">
-          <el-card :body-style="{ padding: '0px' }" style="height: 400px">
+      <div class="home_page_cards mt-30">
+        <div
+          v-for="(item, index) in transport"
+          :key="index"
+          class="solution_cover"
+        >
+          <el-card :body-style="{ padding: '0px' }" shadow="hover">
             <img
-              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+              :src="getImg(item.img)"
               class="image"
               width="100%"
               height="200px"
             />
-            <div style="padding: 14px; height: 50%">
-              <h3>Supply Chain Management</h3>
+            <!-- src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" -->
+
+            <div style="padding: 14px; height: 50%" class="solution_content">
+              <div class="joiner">
+                <i :class="item.icon"></i>
+              </div>
+              <h3 class="mt-30">{{ item.title }}</h3>
               <p>
-                Learn more about our shipping services from 300 ports around the
-                world. Aben Mining can connect your business globally and we
-                make shipping simple.
+                {{ item.text }}
               </p>
               <div class="bottom clearfix">
-                <el-button type="text" class="button">Operating</el-button>
+                <el-button type="text" class="button read_more"
+                  >Read more</el-button
+                >
               </div>
             </div>
           </el-card>
-        </el-col>
-      </el-row>
+        </div>
+      </div>
+    </div>
+    <div class="home_office_container">
+      <div
+        v-for="(office, index) in homeOffice"
+        :key="index"
+        class="home_office"
+      >
+        <section class="home_office_icon">
+          <i :class="office.icon"></i>
+        </section>
+        <section>
+          <h3>{{ office.title }}</h3>
+          <div>
+            <p>{{ office.main_text }}</p>
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 </template>
@@ -76,25 +109,65 @@ export default Vue.extend({
   name: 'IndexPage',
   data() {
     return {
-      cardContent: [
+      transport: [
         {
-          img: 'https://www.abenmining.com/wp-content/uploads/2021/03/1.jpg',
+          title: 'Supply Chain Management',
+          icon: 'el-icon-link',
+          img: 'logistic1.jpg',
+          text: 'Learn more about our shipping services from 300 ports around the world. Aben Mining can connect your business globally and we make shipping simple.',
+        },
+        {
+          title: 'Air Freight Transportation ',
+          icon: 'el-icon-truck',
+          img: 'logistic2.jpg',
+          text: 'At Aben Mining, we can meet all your global transportation needs by our best Air Freight Services. Whether you’re shipping medical supplies to Haiti,',
+        },
+        {
+          title: 'Storage Facility',
+          img: 'logistic3.jpg',
+          icon: 'el-icon-takeaway-box',
+          text: 'Our safety Vaults was established with the purpose of renting safe deposit boxes, bullion safes and strong rooms for the safe guarding...',
+        },
+      ],
+      carouselContent: [
+        {
+          // img: 'https://www.abenmining.com/wp-content/uploads/2021/03/1.jpg',
+          img: 'cargo.png',
           text: 'PROVIDING FIRST CLASS FREIGHT SERVICES',
         },
         {
-          img: 'https://www.abenmining.com/wp-content/uploads/2021/03/4.jpg',
+          // img: 'https://www.abenmining.com/wp-content/uploads/2021/03/4.jpg',
+          img: 'cargos.png',
           text: 'WE HELP YOU ACHIEVE YOUR BUSINESS GOALS',
         },
         {
-          img: 'https://www.abenmining.com/wp-content/uploads/2021/03/2.jpg',
-          text: 'Motor Transport Of Any Kind & carrying capacity',
+          // img: 'https://www.abenmining.com/wp-content/uploads/2021/03/2.jpg',
+          img: 'truck.png',
+          text: ' MOTOR TRANSPORT OF ANY KIND & CARRYING CAPACITY',
+        },
+      ],
+      homeOffice: [
+        {
+          main_text: 'support@abenmining.com',
+          title: 'Email Address',
+          icon: 'el-icon-message',
+        },
+        {
+          main_text: 'Albemarle Ave, Rocky Mount, NC 27801, USA',
+          title: 'Main Office',
+          icon: 'el-icon-location',
+        },
+        {
+          main_text: '23 Leinster Square, Bayswater, London W2 4NE, UK',
+          title: 'UK Branch',
+          icon: 'el-icon-place',
         },
       ],
     }
   },
   methods: {
     getImg(img: string) {
-      return require(`${img}`)
+      return require(`../assets/img/${img}`)
     },
   },
 })
@@ -102,43 +175,185 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 $small_screen: 426px;
+$medium_screen: 769px;
 $laptop_screen: 1024px;
 .home_container {
   // min-height: 900px;
+
   .card_container {
     padding-top: 20px;
-    margin: 30px auto;
-    width: 90%;
+    margin: 30px 0;
+    width: 100%;
     .slider_img {
-      background-size: contain;
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-size: 100%;
-      height: 500px;
+      // height: 440px;
+      // width: 60%;
     }
   }
-  .logistic_header_container {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    .logistic_header {
-      font-size: 2.2rem;
+  .logistics_container {
+    padding-top: 70px;
+
+    .logistic_header_container {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      // padding-top: 10px;
+      padding-bottom: 20px;
+      @media (max-width: $small_screen) {
+        width: 100%;
+        margin: 0;
+      }
+      .logistic_header {
+        font-size: 2.2rem;
+      }
     }
   }
   .home_page_cards {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .carousel_item {
-    height: 500px;
-    padding: 40px 30px;
-    .slider_content {
+    // display: flex;
+    // justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    @media (max-width: $medium_screen) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $small_screen) {
       display: flex;
-      height: 100%;
-      img {
-        border-radius: 30px;
+      flex-direction: column;
+      align-items: center;
+    }
+    .solution_cover {
+      width: 100%;
+      margin-bottom: 20px;
+      @media (max-width: $small_screen) {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  }
+  .el_carousel_outer {
+    // height: 550px;
+    @media (max-width: $laptop_screen) {
+      // height: 400px;
+    }
+
+    .carousel_item {
+      // height: 550px;
+      padding: 102px 55px;
+      @media (max-width: $laptop_screen) {
+        // height: 400px;
+        padding: 55px;
+      }
+      @media (max-width: $small_screen) {
+        padding: 20px;
+      }
+      .slider_content {
+        display: flex;
+        // min-height: 460px;
+        .slider_content_img {
+          width: 60%;
+          border-radius: 30px;
+          @media (max-width: $small_screen) {
+            width: 100%;
+          }
+        }
+        .slider_content_text {
+          width: 40%;
+          h2 {
+            font-size: 2.4rem;
+            line-height: 1.2em;
+            padding-top: 10px;
+            @media (max-width: $medium_screen) {
+              font-size: 2rem;
+            }
+            @media (max-width: $small_screen) {
+              font-size: 1.5rem;
+            }
+          }
+          @media (max-width: $small_screen) {
+            width: 100%;
+          }
+        }
+        @media (max-width: $small_screen) {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  .solution_content {
+    position: relative;
+    .joiner {
+      width: 80px;
+      position: absolute;
+      top: -30px;
+      // left: -2px;
+      margin-left: 10px;
+      height: 70px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      border-radius: 50%;
+      padding: 20px;
+      z-index: 3;
+      color: var(--color-primary);
+      i {
+        font-size: 2.4rem;
+        font-weight: 600;
+      }
+      @media (max-width: $small_screen) {
+        // width: 50px;
+        position: absolute;
+        // height: 50px;
+        // padding: 10px;
+        // top: -50px;
+      }
+    }
+  }
+  .home_office_container {
+    margin: 30px auto;
+    width: 90%;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    @media (max-width: $small_screen) {
+      display: flex;
+      margin: 30px 0;
+      width: 100%;
+      flex-direction: column;
+    }
+    .home_office {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 230px;
+      width: 100%;
+      text-align: center;
+      @media (max-width: $small_screen) {
+        height: 200px;
+      }
+      p {
+        width: 60%;
+        margin: 10px auto;
+        @media (max-width: $small_screen) {
+          width: 100%;
+        }
+      }
+      .home_office_icon {
+        margin-bottom: 20px;
+        background-color: #54595f;
+        width: 80px;
+        height: 80px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        border-radius: 50%;
+
+        i {
+          font-size: 3rem;
+          color: #fff;
+        }
       }
     }
   }
