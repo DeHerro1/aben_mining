@@ -14,29 +14,37 @@
         text-color="#000"
         active-text-color="#ff6a3e"
       >
-        <NuxtLink to="/"
-          ><el-menu-item index="1" class="side_nav_item"
-            >Home</el-menu-item
-          ></NuxtLink
+        <el-menu-item index="1" class="side_nav_item" @click="$router.push('/')"
+          >Home</el-menu-item
         >
         <el-submenu index="2">
           <template slot="title">Our Services</template>
           <el-menu-item index="2-1"
             ><span class="p-10">Air Freight</span></el-menu-item
           >
-          <el-menu-item index="2-2"
+          <el-menu-item
+            index="2-2"
+            @click="$router.push('/services/chain-management')"
             ><span class="p-10">Chain Management</span></el-menu-item
           >
-          <el-menu-item index="2-3"
+          <el-menu-item
+            index="2-3"
+            @click="$router.push('/services/counter-surveillance')"
             ><span class="p-10">Counter Surveillance</span></el-menu-item
           >
-          <el-menu-item index="2-4"
+          <el-menu-item
+            index="2-4"
+            @click="$router.push('/services/mineral-refinery')"
             ><span class="p-10">Mineral Refinery</span></el-menu-item
           >
-          <el-menu-item index="2-4"
+          <el-menu-item
+            index="2-4"
+            @click="$router.push('/services/ocean-freight')"
             ><span class="p-10">Ocean Freight</span></el-menu-item
           >
-          <el-menu-item index="2-4"
+          <el-menu-item
+            index="2-4"
+            @click="$router.push('/services/storage-facility')"
             ><span class="p-10">Storage Facility</span></el-menu-item
           >
         </el-submenu>
@@ -46,22 +54,33 @@
             >About Us</el-menu-item
           ></NuxtLink
         >
-        <el-menu-item index="4" class="side_nav_item">Contact Us</el-menu-item>
-        <el-menu-item index="5" class="side_nav_item">Storage</el-menu-item>
-        <el-menu-item index="6" class="side_nav_item"
+        <el-menu-item
+          @click="$router.push('/contactUs')"
+          index="4"
+          class="side_nav_item"
+          >Contact Us</el-menu-item
+        >
+        <el-menu-item
+          @click="$router.push('/storage')"
+          index="5"
+          class="side_nav_item"
+          >Storage</el-menu-item
+        >
+        <el-menu-item
+          @click="$router.push('/tracking')"
+          index="6"
+          class="side_nav_item"
           >Track Shipment</el-menu-item
         >
       </el-menu>
     </el-drawer>
     <div class="section d-flex justify_between">
-      <NuxtLink to="/">
-        <div class="header_logo">
-          <img
-            src="https://usercontent.one/wp/www.abenmining.com/wp-content/uploads/2021/03/cropped-aben_mininglogo-1.png"
-            alt="aben mining logo"
-          />
-        </div>
-      </NuxtLink>
+      <div class="header_logo" @click="$router.push('/')">
+        <img
+          src="https://usercontent.one/wp/www.abenmining.com/wp-content/uploads/2021/03/cropped-aben_mininglogo-1.png"
+          alt="aben mining logo"
+        />
+      </div>
       <el-menu
         :default-active="activeIndex"
         class="el-menu-demo hidden-sm-and-down"
@@ -99,13 +118,13 @@
           ><NuxtLink to="/aboutUs">About Us</NuxtLink></el-menu-item
         >
         <el-menu-item index="4">
-          <NuxtLink to="/conactUs">Contact Us</NuxtLink></el-menu-item
+          <NuxtLink to="/contactUs">Contact Us</NuxtLink></el-menu-item
         >
         <el-menu-item index="5"
           ><NuxtLink to="/storage">Storage</NuxtLink></el-menu-item
         >
         <el-menu-item index="6"
-          ><NuxtLink to="/track_shipment"
+          ><NuxtLink to="/track-shipment"
             >Track Shipment</NuxtLink
           ></el-menu-item
         >
