@@ -126,3 +126,21 @@
 .solution_cover > .el-card {
   height: 400px;
 }
+.el-input__inner {
+  padding: 20px;
+  text-transform: uppercase;
+  height: 60px;
+  text-transform: uppercase;
+}
+.el-button--danger {
+  color: #fff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  letter-spacing: 0.2em;
+}
+@media (max-width: 468px) {
+  .el-input__inner {
+    padding: 10px;
+    height: 40px;
+  }
+}

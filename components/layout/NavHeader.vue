@@ -1,7 +1,12 @@
 <template>
   <!-- style="background: #54595f" -->
   <div class="header py-10">
-    <el-drawer :append-to-body="true" :visible.sync="drawer" direction="rtl">
+    <el-drawer
+      :append-to-body="true"
+      size="50%"
+      :visible.sync="drawer"
+      direction="rtl"
+    >
       <el-menu
         :default-active="activeIndex"
         class="el-menu-vertical-demo"
@@ -9,7 +14,11 @@
         text-color="#000"
         active-text-color="#ff6a3e"
       >
-        <el-menu-item index="1" class="side_nav_item">Home</el-menu-item>
+        <NuxtLink to="/"
+          ><el-menu-item index="1" class="side_nav_item"
+            >Home</el-menu-item
+          ></NuxtLink
+        >
         <el-submenu index="2">
           <template slot="title">Our Services</template>
           <el-menu-item index="2-1"
@@ -32,7 +41,11 @@
           >
         </el-submenu>
 
-        <el-menu-item index="3" class="side_nav_item">About Us</el-menu-item>
+        <NuxtLink to="/aboutUs"
+          ><el-menu-item index="3" class="side_nav_item"
+            >About Us</el-menu-item
+          ></NuxtLink
+        >
         <el-menu-item index="4" class="side_nav_item">Contact Us</el-menu-item>
         <el-menu-item index="5" class="side_nav_item">Storage</el-menu-item>
         <el-menu-item index="6" class="side_nav_item"
@@ -59,7 +72,7 @@
         active-text-color="#ff6a3e"
         @select="handleSelect"
       >
-        <el-menu-item index="1">Home</el-menu-item>
+        <el-menu-item index="1"><NuxtLink to="/">Home</NuxtLink></el-menu-item>
         <el-submenu index="2">
           <template slot="title">Our Services</template>
           <el-menu-item index="2-1"
@@ -82,10 +95,20 @@
           >
         </el-submenu>
 
-        <el-menu-item index="3">About Us</el-menu-item>
-        <el-menu-item index="4">Contact Us</el-menu-item>
-        <el-menu-item index="5">Storage</el-menu-item>
-        <el-menu-item index="6">Track Shipment</el-menu-item>
+        <el-menu-item index="3"
+          ><NuxtLink to="/aboutUs">About Us</NuxtLink></el-menu-item
+        >
+        <el-menu-item index="4">
+          <NuxtLink to="/conactUs">Contact Us</NuxtLink></el-menu-item
+        >
+        <el-menu-item index="5"
+          ><NuxtLink to="/storage">Storage</NuxtLink></el-menu-item
+        >
+        <el-menu-item index="6"
+          ><NuxtLink to="/track_shipment"
+            >Track Shipment</NuxtLink
+          ></el-menu-item
+        >
       </el-menu>
       <div class="mobile_nav hidden-md-and-up" @click="drawer = true">
         <div></div>

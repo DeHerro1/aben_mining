@@ -50,11 +50,16 @@ a {
 i {
   font-weight: bold;
 }
-p {
+p,
+li {
   font-family: var(--font-primary-light), sans-serif;
   font-weight: bold;
   color: #64748b;
 }
+/* li {
+  font-weight: bold;
+  color: #64748b;
+} */
 b {
   font-family: var(--font-primary-md), sans-serif;
   font-weight: 500;
@@ -65,10 +70,10 @@ small {
   color: #64748b;
 }
 h2 {
-  font-size: 1.2rem;
+  font-size: 4rem;
 }
 h3 {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 h4 {
   font-size: 1rem;
@@ -128,6 +133,10 @@ footer p {
 
 .w-100 {
   width: 100%;
+}
+
+.m-5 {
+  margin: 5px;
 }
 
 .m-10 {

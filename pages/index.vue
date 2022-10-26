@@ -1,102 +1,126 @@
 <template>
-  <div class="home_container section">
-    <div class="card_container">
-      <el-card shadow="always" class="slider_card">
-        <el-carousel
-          indicator-position="outside"
-          arrow="never"
-          class="el_carousel_outer"
-          :interval="50000"
-          height="500px"
-          trigger="click"
-        >
-          <el-carousel-item
-            v-for="(content, index) in carouselContent"
-            :key="index"
-            class="carousel_item"
-          >
-            <div class="slider_content">
-              <div class="slider_content_img pr-10">
-                <img
-                  :src="getImg(content.img)"
-                  alt=""
-                  width="100%"
-                  height="100%"
-                />
-                <!-- :style="{ backgroundImage: 'url(' + item.img + ')' }"
-                class="slider_img w-50" -->
-              </div>
-              <div class="slider_content_text pl-10 pt-30">
-                <h2 class="pt-20 pl-20" style="color: #ff6a3e">
-                  {{ content.text }}
-                </h2>
-              </div>
+  <div>
+    <div class="landing_page_head">
+      <div class="landing_page_content_container">
+        <div class="landing_page_content">
+          <h1>Delivery Express</h1>
+          <p>
+            Explore ways to become more efficient, see printing offers and
+            solutions insights and inspiration for your small business.
+          </p>
+          <div class="landing_page_tracking">
+            <el-input
+              v-model="tracking_id"
+              placeholder="TRACKING ID"
+            ></el-input>
+            <div class="tracking_btn_container">
+              <el-button type="warning" class="tracking_btn"
+                >TRACKING</el-button
+              >
             </div>
-          </el-carousel-item>
-        </el-carousel>
-      </el-card>
-    </div>
-    <div class="logistics_container">
-      <section class="logistic_header_container">
-        <!-- <el-divider > -->
-        <h2 class="logistic_header">Logistics Solutions</h2>
-        <!-- </el-divider> -->
-      </section>
-      <section class="d-flex justify_center">
-        <p class="center w-50">
-          From the farm to your refrigerator, or the factory to your wardrobe.
-          Aben is developing solutions that meet customer needs from one end of
-          the supply chain to the other.
-        </p>
-      </section>
-      <div class="home_page_cards mt-30">
-        <div
-          v-for="(item, index) in transport"
-          :key="index"
-          class="solution_cover"
-        >
-          <el-card :body-style="{ padding: '0px' }" shadow="hover">
-            <img
-              :src="getImg(item.img)"
-              class="image"
-              width="100%"
-              height="200px"
-            />
-            <!-- src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" -->
-
-            <div style="padding: 14px; height: 50%" class="solution_content">
-              <div class="joiner">
-                <i :class="item.icon"></i>
-              </div>
-              <h3 class="mt-30">{{ item.title }}</h3>
-              <p>
-                {{ item.text }}
-              </p>
-              <div class="bottom clearfix">
-                <el-button type="text" class="button read_more"
-                  >Read more</el-button
-                >
-              </div>
-            </div>
-          </el-card>
+          </div>
         </div>
       </div>
     </div>
-    <div class="home_office_container">
-      <div
-        v-for="(office, index) in homeOffice"
-        :key="index"
-        class="home_office"
-      >
-        <section class="home_office_icon">
-          <i :class="office.icon"></i>
+    <div class="home_container section">
+      <div class="card_container">
+        <el-card shadow="always" class="slider_card">
+          <el-carousel
+            indicator-position="outside"
+            arrow="never"
+            class="el_carousel_outer"
+            :interval="50000"
+            height="500px"
+            trigger="click"
+          >
+            <el-carousel-item
+              v-for="(content, index) in carouselContent"
+              :key="index"
+              class="carousel_item"
+            >
+              <div class="slider_content">
+                <div class="slider_content_img pr-10">
+                  <img
+                    :src="getImg(content.img)"
+                    alt=""
+                    width="100%"
+                    height="100%"
+                  />
+                  <!-- :style="{ backgroundImage: 'url(' + item.img + ')' }"
+                class="slider_img w-50" -->
+                </div>
+                <div class="slider_content_text pl-10 pt-30">
+                  <h2 class="pt-20 pl-20" style="color: #ff6a3e">
+                    {{ content.text }}
+                  </h2>
+                </div>
+              </div>
+            </el-carousel-item>
+          </el-carousel>
+        </el-card>
+      </div>
+      <div class="logistics_container">
+        <section class="logistic_header_container">
+          <!-- <el-divider > -->
+          <h2 class="logistic_header">Logistics Solutions</h2>
+          <!-- </el-divider> -->
         </section>
-        <section>
-          <h3>{{ office.title }}</h3>
-          <div>
-            <p>{{ office.main_text }}</p>
+        <section class="d-flex justify_center">
+          <p class="center w-50">
+            From the farm to your refrigerator, or the factory to your wardrobe.
+            Aben is developing solutions that meet customer needs from one end
+            of the supply chain to the other.
+          </p>
+        </section>
+        <div class="home_page_cards mt-30">
+          <div
+            v-for="(item, index) in transport"
+            :key="index"
+            class="solution_cover"
+          >
+            <el-card :body-style="{ padding: '0px' }" shadow="hover">
+              <img
+                :src="getImg(item.img)"
+                class="image"
+                width="100%"
+                height="200px"
+              />
+              <!-- src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" -->
+
+              <div style="padding: 14px; height: 50%" class="solution_content">
+                <div class="joiner">
+                  <i :class="item.icon"></i>
+                </div>
+                <h3 class="mt-30">{{ item.title }}</h3>
+                <p>
+                  {{ item.text }}
+                </p>
+                <div class="bottom clearfix">
+                  <el-button type="text" class="button read_more"
+                    >Read more</el-button
+                  >
+                </div>
+              </div>
+            </el-card>
           </div>
-        </section>
+        </div>
+      </div>
+      <div class="home_office_container">
+        <div
+          v-for="(office, index) in homeOffice"
+          :key="index"
+          class="home_office"
+        >
+          <section class="home_office_icon">
+            <i :class="office.icon"></i>
+          </section>
+          <section>
+            <h3>{{ office.title }}</h3>
+            <div>
+              <p>{{ office.main_text }}</p>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   </div>
@@ -163,6 +187,7 @@ export default Vue.extend({
           icon: 'el-icon-place',
         },
       ],
+      tracking_id: '' as string,
     }
   },
   methods: {
@@ -177,17 +202,89 @@ export default Vue.extend({
 $small_screen: 426px;
 $medium_screen: 769px;
 $laptop_screen: 1024px;
-.home_container {
-  // min-height: 900px;
+.landing_page_head {
+  background-image: url('../assets/img/home_page_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  .landing_page_content_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .landing_page_content {
+      height: 50%;
+      h1 {
+        font-size: 6.8rem;
+        color: #fff;
+        padding-bottom: 50px;
+        text-align: center;
 
+        @media (max-width: $medium_screen) {
+          font-size: 5rem;
+          padding-bottom: 30px;
+        }
+        @media (max-width: $small_screen) {
+          font-size: 3.6rem;
+          line-height: 1em;
+          padding-bottom: 20px;
+        }
+      }
+      p {
+        color: #fff;
+        padding: 20px 0;
+        font-size: 20px;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 1.5em;
+        @media (max-width: $small_screen) {
+          font-size: 16px;
+          width: 100%;
+          line-height: 1.2em;
+        }
+      }
+      .landing_page_tracking {
+        display: flex;
+        width: 80%;
+        margin: 20px auto;
+        @media (max-width: $small_screen) {
+          flex-direction: column;
+        }
+        .tracking_btn_container {
+          @media (max-width: $small_screen) {
+            display: flex;
+            justify-content: center;
+          }
+          .tracking_btn {
+            margin-left: 10px;
+            padding: 20px;
+            @media (max-width: $small_screen) {
+              margin-left: 0;
+              margin-top: 10px;
+              // width: fit-content;
+              padding: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.home_container {
+  z-index: 4;
+  position: relative;
+  top: -40px;
   .card_container {
-    padding-top: 20px;
-    margin: 30px 0;
+    // padding-top: 20px;
+    // margin: 30px 0;
+
     width: 100%;
     .slider_img {
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      // background-size: cover;
+      // background-position: center;
+      // background-repeat: no-repeat;
       // height: 440px;
       // width: 60%;
     }
@@ -234,11 +331,6 @@ $laptop_screen: 1024px;
     }
   }
   .el_carousel_outer {
-    // height: 550px;
-    @media (max-width: $laptop_screen) {
-      // height: 400px;
-    }
-
     .carousel_item {
       // height: 550px;
       padding: 102px 55px;
