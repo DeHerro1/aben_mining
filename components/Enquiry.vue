@@ -1,21 +1,75 @@
 <template>
   <div class="support_more">
-    <el-dialog title="Shipping address" :visible.sync="dialogFormVisible">
+    <el-dialog
+      title="Freight Details"
+      width="60%"
+      :visible.sync="dialogFormVisible"
+    >
       <el-form :model="form">
-        <el-form-item label="Promotion name" :label-width="formLabelWidth">
-          <el-input v-model="form.name" autocomplete="off"></el-input>
-        </el-form-item>
-        <el-form-item label="Zones" :label-width="formLabelWidth">
-          <el-select v-model="form.region" placeholder="Please select a zone">
-            <el-option label="Zone No.1" value="shanghai"></el-option>
-            <el-option label="Zone No.2" value="beijing"></el-option>
+        <!-- <el-form-item label="Zones" :label-width="formLabelWidth"> -->
+        <div class="form_freight_select mb-10">
+          <el-select v-model="form.freight_type" placeholder="Freight Type">
+            <el-option
+              v-for="type in freight_types"
+              :key="type"
+              :label="type"
+              :value="type"
+            >
+              {{ type }}
+            </el-option>
           </el-select>
-        </el-form-item>
+          <el-select v-model="form.terms" placeholder="Incoterms">
+            <el-option
+              v-for="term in incoterms"
+              :key="term"
+              :label="term"
+              :value="term"
+            >
+              {{ term }}
+            </el-option>
+          </el-select>
+        </div>
+        <!-- </el-form-item> -->
+        <div>
+          <el-input
+            v-model="form.name"
+            placeholder="City of departure"
+            class="mb-10"
+          ></el-input>
+          <el-input
+            v-model="form.name"
+            placeholder="Delivery city"
+            class="mb-10"
+          ></el-input>
+          <el-input
+            v-model="form.name"
+            placeholder="Total gross weight (KG)"
+            class="mb-10"
+          ></el-input>
+          <el-input
+            v-model="form.name"
+            type="email"
+            placeholder="Dimension"
+            class="mb-10"
+          ></el-input>
+          <el-input
+            v-model="form.name"
+            placeholder="Dimension"
+            class="mb-10"
+          ></el-input>
+          <el-input
+            v-model="form.message"
+            type="textarea"
+            :rows="3"
+            placeholder="MESSAGE"
+          >
+          </el-input>
+        </div>
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">Cancel</el-button>
         <el-button type="primary" @click="dialogFormVisible = false"
-          >Confirm</el-button
+          >Submit</el-button
         >
       </span>
     </el-dialog>
@@ -53,6 +107,26 @@ export default Vue.extend({
     return {
       dialogFormVisible: false,
       user: 'login',
+      form: {},
+      freight_types: [
+        'Road Transportation',
+        'Air Transportation',
+        'Sea Transportation',
+        'Warehousing',
+      ],
+      incoterms: [
+        'EXW',
+        'FCA',
+        'CPT',
+        'CIP',
+        'DAT',
+        'DAP',
+        'DDP',
+        'FAS',
+        'FOB',
+        'CFR',
+        'CIF',
+      ],
     }
   },
   methods: {},
@@ -62,6 +136,17 @@ export default Vue.extend({
 $small_screen: 426px;
 $medium_screen: 769px;
 $laptop_screen: 1024px;
+.form_freight_select {
+  //   display: flex;
+  //   justify-content: space-between;
+  .el-select {
+    margin-right: 10px;
+  }
+  @media (max-width: $small_screen) {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .support_more {
   width: 100%;
   @media (max-width: $medium_screen) {
