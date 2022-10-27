@@ -337,3 +337,9 @@ footer p {
 .clickable {
   cursor: pointer;
 }
+.el-submenu__title {
+  border-bottom: transparent !important;
+}
+.el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
+  border-bottom: none;
+}

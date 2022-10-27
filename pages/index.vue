@@ -89,12 +89,17 @@
                 <div class="joiner">
                   <i :class="item.icon"></i>
                 </div>
-                <h3 class="mt-30">{{ item.title }}</h3>
+                <h3 class="mt-30 mb-10">{{ item.title }}</h3>
                 <p>
                   {{ item.text }}
                 </p>
                 <div class="bottom clearfix">
-                  <el-button type="text" class="button read_more"
+                  <el-button
+                    type="text"
+                    class="button read_more"
+                    @click="
+                      $router.push('/services/air-freight-transportation')
+                    "
                     >Read more</el-button
                   >
                 </div>
