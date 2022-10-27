@@ -129,7 +129,7 @@
 .el-input__inner {
   padding: 20px;
   text-transform: uppercase;
-  height: 60px;
+  /* height: 60px; */
   text-transform: uppercase;
 }
 .el-button--danger {

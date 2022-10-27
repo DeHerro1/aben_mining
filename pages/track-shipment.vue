@@ -8,7 +8,7 @@
     <div class="section pt-20">
       <div class="tracking_main_content">
         <div class="tracking_content_container">
-          <h2 class="py-20">Enter the Consignment No.</h2>
+          <h3 class="py-20">Enter the Consignment No.</h3>
           <div class="tracking_content">
             <el-input
               v-model="tracking_id"
@@ -57,6 +57,11 @@ h3 {
   font-weight: 700;
   font-size: 1.8rem;
   padding-bottom: 20px;
+  @media (max-width: $small_screen) {
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1em;
+  }
 }
 .about_header {
   height: 350px;
@@ -94,10 +99,10 @@ h3 {
     align-items: center;
     .tracking_content {
       display: flex;
-      width: 100%;
+      width: 80%;
       @media (max-width: $small_screen) {
-        display: flex;
         flex-direction: column;
+        width: 80%;
       }
     }
 

@@ -95,22 +95,46 @@
         <el-submenu index="2">
           <template slot="title">Our Services</template>
           <el-menu-item index="2-1"
-            ><span class="p-10">Air Freight</span></el-menu-item
+            ><span class="p-10"
+              ><NuxtLink to="/services/air-freight-transportation"
+                >Air Freight</NuxtLink
+              ></span
+            ></el-menu-item
           >
           <el-menu-item index="2-2"
-            ><span class="p-10">Chain Management</span></el-menu-item
+            ><span class="p-10"
+              ><NuxtLink to="/services/chain-management"
+                >Chain Management</NuxtLink
+              ></span
+            ></el-menu-item
           >
           <el-menu-item index="2-3"
-            ><span class="p-10">Counter Surveillance</span></el-menu-item
+            ><span class="p-10"
+              ><NuxtLink to="/services/counter-surveillance"
+                >Counter Surveillance</NuxtLink
+              ></span
+            ></el-menu-item
           >
           <el-menu-item index="2-4"
-            ><span class="p-10">Mineral Refinery</span></el-menu-item
+            ><span class="p-10"
+              ><NuxtLink to="/services/mineral-refinery"
+                >Mineral Refinery</NuxtLink
+              ></span
+            ></el-menu-item
           >
           <el-menu-item index="2-4"
-            ><span class="p-10">Ocean Freight</span></el-menu-item
+            ><span class="p-10"
+              ><NuxtLink to="/services/ocean-freight"
+                >Ocean Freight</NuxtLink
+              ></span
+            ></el-menu-item
           >
           <el-menu-item index="2-4"
-            ><span class="p-10">Storage Facility</span></el-menu-item
+            ><span class="p-10"
+              ><NuxtLink to="/services/storage-facility"
+                >Storage Facility</NuxtLink
+              ></span
+            ></el-menu-item
           >
         </el-submenu>
 
@@ -146,15 +170,22 @@ export default Vue.extend({
   name: 'NavHeader',
   data() {
     return {
-      activeIndex: '1',
+      activeIndex: '1' as any,
       drawer: false,
     }
   },
 
-  created() {},
+  created() {
+    this.activeIndex = sessionStorage.getItem('key')
+      ? sessionStorage.getItem('key')
+      : '1'
+  },
   methods: {
     handleSelect(key: number, keyPath: any) {
+      sessionStorage.setItem('key', key.toString())
+      console.log(sessionStorage.getItem('key'))
       console.log(key, keyPath)
+      this.activeIndex = key.toString()
     },
   },
 })

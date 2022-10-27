@@ -14,9 +14,7 @@
               placeholder="TRACKING ID"
             ></el-input>
             <div class="tracking_btn_container">
-              <el-button type="warning" class="tracking_btn"
-                >TRACKING</el-button
-              >
+              <el-button type="danger" class="tracking_btn">TRACKING</el-button>
             </div>
           </div>
         </div>
@@ -247,10 +245,11 @@ $laptop_screen: 1024px;
       }
       .landing_page_tracking {
         display: flex;
-        width: 80%;
+        width: 50%;
         margin: 20px auto;
         @media (max-width: $small_screen) {
           flex-direction: column;
+          width: 80%;
         }
         .tracking_btn_container {
           @media (max-width: $small_screen) {
@@ -259,7 +258,6 @@ $laptop_screen: 1024px;
           }
           .tracking_btn {
             margin-left: 10px;
-            padding: 20px;
             @media (max-width: $small_screen) {
               margin-left: 0;
               margin-top: 10px;
