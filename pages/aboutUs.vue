@@ -140,7 +140,6 @@ h3 {
     align-items: center;
     z-index: 2;
     h2 {
-      font-size: 2.2rem;
       font-weight: 800;
     }
   }

@@ -2,7 +2,7 @@
   <div>
     <section class="about_header">
       <div class="about_header_text">
-        <h2>TRACKING HERE</h2>
+        <h2>Tracking Here</h2>
       </div>
     </section>
     <div class="section pt-20">
@@ -81,10 +81,10 @@ h3 {
     align-items: center;
     z-index: 2;
     h2 {
-      font-size: 3rem;
+      // font-size: 3rem;
       font-weight: 800;
       @media (max-width: $small_screen) {
-        font-size: 2.4rem;
+        font-size: 2.6rem;
         font-weight: 800;
       }
     }

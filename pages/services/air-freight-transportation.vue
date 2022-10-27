@@ -2,7 +2,7 @@
   <div>
     <section class="about_header">
       <div class="about_header_text">
-        <h2>AIR FREIGHT</h2>
+        <h2>Air Freight</h2>
       </div>
     </section>
     <div class="air_freight_container section pt-20">
@@ -207,13 +207,6 @@ $laptop_screen: 1024px;
         color: var(--color-primary);
       }
     }
-  }
-  .right_icon {
-    background: var(--color-primary);
-    border-radius: 50%;
-    color: #fff;
-    padding: 2px;
-    margin-right: 4px;
   }
 }
 </style>

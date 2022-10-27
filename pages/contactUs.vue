@@ -112,7 +112,7 @@ h3 {
     align-items: center;
     z-index: 2;
     h2 {
-      font-size: 3rem;
+      // font-size: 3rem;
       font-weight: 800;
     }
   }

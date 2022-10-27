@@ -343,3 +343,10 @@ footer p {
 .el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
   border-bottom: none;
 }
+.right_icon {
+  background: var(--color-primary);
+  border-radius: 50%;
+  color: #fff;
+  padding: 2px;
+  margin-right: 5px;
+}

@@ -146,7 +146,9 @@
           <NuxtLink to="/contactUs">Contact Us</NuxtLink></el-menu-item
         >
         <el-menu-item index="5"
-          ><NuxtLink to="/storage">Storage</NuxtLink></el-menu-item
+          ><NuxtLink to="services/storage-facility"
+            >Storage</NuxtLink
+          ></el-menu-item
         >
         <el-menu-item index="6"
           ><NuxtLink to="/track-shipment"
