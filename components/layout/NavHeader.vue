@@ -13,6 +13,7 @@
         background-color="#fff"
         text-color="#000"
         active-text-color="#ff6a3e"
+        @select="handleSelect"
       >
         <el-menu-item index="1" class="side_nav_item" @click="$router.push('/')"
           >Home</el-menu-item
@@ -186,6 +187,7 @@ export default Vue.extend({
       console.log(sessionStorage.getItem('key'))
       console.log(key, keyPath)
       this.activeIndex = key.toString()
+      this.drawer = false
     },
   },
 })
