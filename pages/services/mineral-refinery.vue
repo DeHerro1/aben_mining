@@ -60,9 +60,7 @@
           </div>
         </div>
       </div>
-      <div class="ml-20 w-100">
-        <Enquiry />
-      </div>
+      <Enquiry />
     </div>
   </div>
 </template>
@@ -145,37 +143,6 @@ $laptop_screen: 1024px;
     ul {
       list-style-type: decimal;
       padding-left: 30px;
-    }
-  }
-  .support_container {
-    height: 250px;
-    padding: 40px 20px;
-    background: var(--color-primary);
-    margin-left: 20px;
-    width: 80%;
-    @media (max-width: $medium_screen) {
-      width: 50%;
-      margin: 20px auto;
-    }
-    @media (max-width: $small_screen) {
-      width: 100%;
-      // margin: 20px auto;
-    }
-    .support_inner {
-      width: 90%;
-      text-align: center;
-      margin: 0 auto;
-      h3 {
-        padding-bottom: 10px;
-        color: #fff;
-      }
-      p {
-        color: #fff;
-        padding-bottom: 50px;
-      }
-      .contact_us_btn {
-        color: var(--color-primary);
-      }
     }
   }
   .right_icon {

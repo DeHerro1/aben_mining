@@ -1,5 +1,27 @@
 <template>
   <div class="support_more">
+    <div class="support_container">
+      <div class="support_inner">
+        <h3>Need Support?</h3>
+        <p>We provide first class freight services</p>
+
+        <el-button class="contact_us_btn" @click="$router.push('/contactUs')">
+          CONTACT US
+        </el-button>
+      </div>
+    </div>
+    <div class="support_container support_container_new">
+      <div class="support_inner">
+        <h3>For Any Enquiry</h3>
+        <p>We are always available</p>
+        <el-button
+          class="contact_us_btn mt-20"
+          @click="dialogFormVisible = true"
+        >
+          CONTACT US
+        </el-button>
+      </div>
+    </div>
     <el-dialog
       title="Freight Details"
       width="60%"
@@ -73,28 +95,6 @@
         >
       </span>
     </el-dialog>
-    <div class="support_container">
-      <div class="support_inner">
-        <h3>Need Support?</h3>
-        <p>We provide first class freight services</p>
-
-        <el-button class="contact_us_btn" @click="$router.push('/contactUs')">
-          CONTACT US
-        </el-button>
-      </div>
-    </div>
-    <div class="support_container mt-20">
-      <div class="support_inner">
-        <h3>For Any Enquiry</h3>
-        <p>We are always available</p>
-        <el-button
-          class="contact_us_btn mt-20"
-          @click="dialogFormVisible = true"
-        >
-          CONTACT US
-        </el-button>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -136,6 +136,11 @@ export default Vue.extend({
 $small_screen: 426px;
 $medium_screen: 769px;
 $laptop_screen: 1024px;
+.support_container_new {
+  @media (min-width: 1440px) {
+    margin-top: 30px;
+  }
+}
 .form_freight_select {
   //   display: flex;
   //   justify-content: space-between;
@@ -149,8 +154,12 @@ $laptop_screen: 1024px;
 }
 .support_more {
   width: 100%;
+  margin-left: 20px;
   @media (max-width: $medium_screen) {
     display: flex;
+    // width: 80%;
+    justify-content: space-around;
+    margin: 20px auto;
   }
   @media (max-width: $small_screen) {
     display: block;
@@ -159,13 +168,14 @@ $laptop_screen: 1024px;
     height: 250px;
     padding: 40px 20px;
     background: var(--color-primary);
+    margin-bottom: 30px;
     width: 340px;
     @media (max-width: $laptop_screen) {
       width: 300px;
     }
     @media (max-width: $medium_screen) {
       width: 40%;
-      margin: 20px auto;
+      margin-bottom: 0;
     }
     @media (max-width: $small_screen) {
       width: 80%;

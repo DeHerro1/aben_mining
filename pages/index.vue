@@ -280,17 +280,7 @@ $laptop_screen: 1024px;
   position: relative;
   top: -40px;
   .card_container {
-    // padding-top: 20px;
-    // margin: 30px 0;
-
     width: 100%;
-    .slider_img {
-      // background-size: cover;
-      // background-position: center;
-      // background-repeat: no-repeat;
-      // height: 440px;
-      // width: 60%;
-    }
   }
   .logistics_container {
     padding-top: 70px;

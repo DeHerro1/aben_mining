@@ -93,25 +93,21 @@
           </div>
         </div>
       </div>
-      <div class="support_container">
-        <div class="support_inner">
-          <h3>Need Support?</h3>
-          <p>We provide first class freight services</p>
 
-          <el-button class="contact_us_btn" @click="$router.push('/contactUs')">
-            CONTACT US
-          </el-button>
-        </div>
-      </div>
+      <Enquiry />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import Enquiry from '../../components/Enquiry.vue'
 
 export default Vue.extend({
-  name: 'TrackingPage',
+  name: 'AirFreightPage',
+  components: {
+    Enquiry,
+  },
   data() {
     return {
       contact_info: {

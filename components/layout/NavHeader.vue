@@ -62,7 +62,7 @@
           >Contact Us</el-menu-item
         >
         <el-menu-item
-          @click="$router.push('/storage')"
+          @click="$router.push('/login')"
           index="5"
           class="side_nav_item"
           >Storage</el-menu-item
@@ -146,9 +146,7 @@
           <NuxtLink to="/contactUs">Contact Us</NuxtLink></el-menu-item
         >
         <el-menu-item index="5"
-          ><NuxtLink to="services/storage-facility"
-            >Storage</NuxtLink
-          ></el-menu-item
+          ><NuxtLink to="/login">Storage</NuxtLink></el-menu-item
         >
         <el-menu-item index="6"
           ><NuxtLink to="/track-shipment"

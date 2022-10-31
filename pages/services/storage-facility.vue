@@ -81,9 +81,7 @@
           </p>
         </div>
       </div>
-      <div class="ml-20">
-        <Enquiry />
-      </div>
+      <Enquiry />
     </div>
   </div>
 </template>
