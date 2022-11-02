@@ -24,7 +24,7 @@
           </p>
         </div>
       </div>
-      <div class="pt-20">
+      <div class="pt-30 pb-20 mt-10">
         <h3>Constant care</h3>
         <p>
           Take care of today, actively prepare for tomorrow. What it means as a

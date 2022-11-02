@@ -3,10 +3,10 @@
     <div class="landing_page_head">
       <div class="landing_page_content_container">
         <div class="landing_page_content">
-          <h1>Delivery Express</h1>
+          <h1>Access Security World</h1>
           <p>
-            Explore ways to become more efficient, see printing offers and
-            solutions insights and inspiration for your small business.
+            Explore modern ways to become more efficient, learn more about our
+            shipping services from 300 ports around the world.
           </p>
           <div class="landing_page_tracking">
             <el-input
@@ -140,18 +140,18 @@ export default Vue.extend({
         {
           title: 'Supply Chain Management',
           icon: 'el-icon-link',
-          img: 'logistic1.jpg',
+          img: 'chain_manage1.jpg',
           text: 'Learn more about our shipping services from 300 ports around the world. Aben Mining can connect your business globally and we make shipping simple.',
         },
         {
           title: 'Air Freight Transportation ',
           icon: 'el-icon-truck',
-          img: 'logistic2.jpg',
+          img: 'plan_slider.jpg',
           text: 'At Aben Mining, we can meet all your global transportation needs by our best Air Freight Services. Whether you’re shipping medical supplies to Haiti,',
         },
         {
           title: 'Storage Facility',
-          img: 'logistic3.jpg',
+          img: 'storage.jpg',
           icon: 'el-icon-takeaway-box',
           text: 'Our safety Vaults was established with the purpose of renting safe deposit boxes, bullion safes and strong rooms for the safe guarding...',
         },
@@ -159,12 +159,12 @@ export default Vue.extend({
       carouselContent: [
         {
           // img: 'https://www.abenmining.com/wp-content/uploads/2021/03/1.jpg',
-          img: 'cargo.png',
+          img: 'airplane_cargo.jpg',
           text: 'PROVIDING FIRST CLASS FREIGHT SERVICES',
         },
         {
           // img: 'https://www.abenmining.com/wp-content/uploads/2021/03/4.jpg',
-          img: 'cargos.png',
+          img: 'container2.png',
           text: 'WE HELP YOU ACHIEVE YOUR BUSINESS GOALS',
         },
         {
@@ -419,7 +419,7 @@ $laptop_screen: 1024px;
         height: 200px;
       }
       p {
-        width: 60%;
+        width: 90%;
         margin: 10px auto;
         @media (max-width: $small_screen) {
           width: 100%;

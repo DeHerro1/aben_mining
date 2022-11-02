@@ -93,6 +93,7 @@ h3 {
 .tracking_main_content {
   width: 80%;
   margin: 30px auto;
+  min-height: 200px;
   .tracking_content_container {
     display: flex;
     flex-direction: column;

@@ -120,7 +120,7 @@ $laptop_screen: 1024px;
 .about_header {
   height: 350px;
   margin-bottom: 30px;
-  background-image: url('../../assets/img/truch_slider1.jpg');
+  background-image: url('../../assets/img/storage1.jpg');
   width: 100%;
   background-size: cover;
   background-position: center;

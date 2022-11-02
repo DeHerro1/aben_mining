@@ -97,7 +97,7 @@ h3 {
 .about_header {
   height: 350px;
   margin-bottom: 30px;
-  background-image: url('../assets/img/truch_slider1.jpg');
+  background-image: url('../assets/img/contact_us.jpg');
   width: 100%;
   background-size: cover;
   background-position: center;

@@ -65,7 +65,7 @@
           @click="$router.push('/login')"
           index="5"
           class="side_nav_item"
-          >Storage</el-menu-item
+          >Login</el-menu-item
         >
         <el-menu-item
           @click="$router.push('/tracking')"
@@ -77,17 +77,14 @@
     </el-drawer>
     <div class="section d-flex justify_between">
       <div class="header_logo" @click="$router.push('/')">
-        <img
-          src="https://usercontent.one/wp/www.abenmining.com/wp-content/uploads/2021/03/cropped-aben_mininglogo-1.png"
-          alt="aben mining logo"
-        />
+        <img src="../../assets/img/access_logo.png" alt="access logo" />
       </div>
       <el-menu
         :default-active="activeIndex"
         class="el-menu-demo hidden-sm-and-down"
         mode="horizontal"
-        background-color="#54595f"
-        text-color="#fff"
+        background-color="#fff"
+        text-color="#000"
         menu-trigger="hover"
         active-text-color="#ff6a3e"
         @select="handleSelect"
@@ -146,7 +143,7 @@
           <NuxtLink to="/contactUs">Contact Us</NuxtLink></el-menu-item
         >
         <el-menu-item index="5"
-          ><NuxtLink to="/login">Storage</NuxtLink></el-menu-item
+          ><NuxtLink to="/login">Login</NuxtLink></el-menu-item
         >
         <el-menu-item index="6"
           ><NuxtLink to="/track-shipment"
@@ -196,12 +193,14 @@ export default Vue.extend({
 $small_screen: 426px;
 $laptop_screen: 1024px;
 .header {
-  background: #54595f;
+  // background: #54595f;
+  background: #fff;
   position: sticky;
   top: 0;
   z-index: 100;
   .header_logo > img {
     height: 50px;
+    width: 60px;
   }
   .service {
     padding: 10px;
