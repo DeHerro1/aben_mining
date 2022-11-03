@@ -77,7 +77,7 @@
     </el-drawer>
     <div class="section d-flex justify_between">
       <div class="header_logo" @click="$router.push('/')">
-        <img src="../../assets/img/access_logo.png" alt="access logo" />
+        <img src="../../assets/img/security_logo.png" alt="access logo" />
       </div>
       <el-menu
         :default-active="activeIndex"
