@@ -203,6 +203,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 $small_screen: 426px;
+
 $medium_screen: 769px;
 $laptop_screen: 1024px;
 .landing_page_head {
@@ -223,15 +224,19 @@ $laptop_screen: 1024px;
         color: #fff;
         padding-bottom: 50px;
         text-align: center;
-
+        @media (max-width: $laptop_screen) {
+          line-height: 1em;
+          padding-bottom: 20px;
+          font-size: 6rem;
+        }
         @media (max-width: $medium_screen) {
           font-size: 5rem;
           padding-bottom: 30px;
         }
         @media (max-width: $small_screen) {
-          font-size: 3.6rem;
+          font-size: 3.4rem;
           line-height: 1em;
-          padding-bottom: 20px;
+          padding-bottom: 0;
         }
       }
       p {
@@ -246,6 +251,7 @@ $laptop_screen: 1024px;
           font-size: 16px;
           width: 100%;
           line-height: 1.2em;
+          padding-bottom: 10px;
         }
       }
       .landing_page_tracking {
@@ -273,6 +279,9 @@ $laptop_screen: 1024px;
         }
       }
     }
+    // @media (max-width: $laptop_screen) {
+    //   height: 80%;
+    // }
   }
 }
 .home_container {
