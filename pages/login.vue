@@ -33,7 +33,9 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'LoginPage',
   data() {
-    return {}
+    return {
+      checked: false,
+    }
   },
   methods: {},
 })

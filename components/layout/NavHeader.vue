@@ -172,17 +172,24 @@ export default Vue.extend({
       drawer: false,
     }
   },
-
+  watch: {
+    $route(to) {
+      if (to.fullPath === '/') {
+        sessionStorage.removeItem('key')
+        sessionStorage.setItem('key', '1')
+        this.activeIndex = '1'
+      }
+    },
+  },
   created() {
     this.activeIndex = sessionStorage.getItem('key')
       ? sessionStorage.getItem('key')
       : '1'
   },
   methods: {
-    handleSelect(key: number, keyPath: any) {
+    handleSelect(key: number) {
       sessionStorage.setItem('key', key.toString())
       console.log(sessionStorage.getItem('key'))
-      console.log(key, keyPath)
       this.activeIndex = key.toString()
       this.drawer = false
     },

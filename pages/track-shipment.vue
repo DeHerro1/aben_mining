@@ -32,16 +32,7 @@ export default Vue.extend({
   name: 'TrackingPage',
   data() {
     return {
-      contact_info: {
-        first_name: '',
-        last_name: '',
-        website: '',
-        email: '',
-        message: '',
-      },
-      about_img: 'about_us_bg1.jpg',
-      about1: 'about1.jpg',
-      about2: 'about2.jpg',
+      tracking_id: '' as string,
     }
   },
   methods: {},

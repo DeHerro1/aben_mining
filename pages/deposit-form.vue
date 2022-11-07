@@ -1,0 +1,396 @@
+<template>
+  <div class="login_main_container">
+    <div class="login_container">
+      <h3 class="center py-20" style="font-size: 30px">Deposit Form</h3>
+      <div class="registerForm_form">
+        <el-form
+          ref="registerForm"
+          :model="registerForm"
+          label-position="top"
+          :rules="validation"
+        >
+          <div class="personal_info_section pb-20">
+            <div class="registerForm_label">
+              <h4>Depositor's Details</h4>
+            </div>
+
+            <div class="form_div">
+              <el-row class="first_last">
+                <el-col :xs="24" :sm="8" class="register_first_name">
+                  <el-form-item label="First Name" prop="first_name">
+                    <el-input
+                      v-model="registerForm.first_name"
+                      placeholder="First name"
+                    >
+                    </el-input>
+                  </el-form-item>
+                </el-col>
+                <el-col :xs="24" :sm="8" class="register_first_name">
+                  <el-form-item label="Last Name" prop="last_name">
+                    <el-input
+                      v-model="registerForm.last_name"
+                      placeholder="Last Name"
+                    >
+                    </el-input>
+                  </el-form-item>
+                </el-col>
+              </el-row>
+              <el-row>
+                <el-col :xs="24" :sm="8" class="register_first_name">
+                  <el-form-item label="City" prop="city">
+                    <el-input v-model="registerForm.city" placeholder="City">
+                    </el-input>
+                  </el-form-item>
+                </el-col>
+                <el-col :xs="24" :sm="8" class="register_first_name">
+                  <el-form-item label="Phone number">
+                    <!-- <vue-phone-number-input
+                v-model="phone"
+                :border-radius="7"
+                default-country-code="GH"
+                @update="onPhoneUpdate"
+              /> -->
+                  </el-form-item>
+                </el-col>
+              </el-row>
+              <el-row>
+                <el-col :xs="24" :sm="8" class="register_first_name">
+                  <el-form-item label="ID Number" prop="id_number">
+                    <el-input
+                      v-model="registerForm.id_number"
+                      placeholder="Phone"
+                    >
+                    </el-input>
+                  </el-form-item>
+                </el-col>
+                <el-col :xs="24" :sm="8" class="register_first_name">
+                  <el-form-item label="Date of Birth" prop="dob">
+                    <el-date-picker
+                      v-model="registerForm.dob"
+                      type="date"
+                      placeholder="Pick a day"
+                    >
+                    </el-date-picker>
+                  </el-form-item>
+                </el-col>
+              </el-row>
+              <el-row>
+                <el-col :xs="24" :sm="8" class="register_first_name">
+                  <el-form-item label="Gender" prop="phone">
+                    <el-radio v-model="registerForm.gender" label="1"
+                      >Femail</el-radio
+                    >
+                    <el-radio v-model="registerForm.gender" label="2"
+                      >Male</el-radio
+                    >
+                  </el-form-item>
+                </el-col>
+                <el-col :xs="24" :sm="8" class="register_first_name">
+                  <el-form-item label="State" prop="state">
+                    <el-input v-model="registerForm.state" placeholder="Phone">
+                    </el-input>
+                  </el-form-item>
+                </el-col>
+              </el-row>
+              <el-row>
+                <el-col :xs="24" :sm="8">
+                  <el-form-item label="Email address" prop="email">
+                    <el-input
+                      v-model="registerForm.email"
+                      type="email"
+                      placeholder="Enter email"
+                    >
+                    </el-input>
+                  </el-form-item>
+                </el-col>
+              </el-row>
+            </div>
+          </div>
+
+          <hr class="hr_rule" />
+          <div class="contact_info_section pb-20">
+            <div class="registerForm_label">
+              <h4>Item Details</h4>
+            </div>
+            <div class="form_div">
+              <el-form-item label="Item Type" prop="item_type">
+                <el-input
+                  v-model="registerForm.item_name"
+                  placeholder="Name of item"
+                >
+                </el-input>
+              </el-form-item>
+              <el-form-item label="Quantity">
+                <el-input
+                  v-model="registerForm.item_name"
+                  placeholder="Quantity of item"
+                >
+                </el-input>
+              </el-form-item>
+              <el-form-item label="Deposite Date">
+                <el-date-picker
+                  v-model="registerForm.deposite_date"
+                  type="date"
+                  placeholder="Pick a day"
+                >
+                </el-date-picker>
+              </el-form-item>
+              <el-form-item label="Item Value">
+                <el-input
+                  v-model="registerForm.item_value"
+                  placeholder="Purpose"
+                >
+                </el-input>
+              </el-form-item>
+              <el-form-item label="Item Value">
+                <el-input
+                  v-model="registerForm.item_value"
+                  placeholder="Purpose of deposit"
+                >
+                </el-input>
+              </el-form-item>
+            </div>
+          </div>
+          <hr class="hr_rule" />
+          <div class="contact_info_section pb-20">
+            <div class="registerForm_label">
+              <h4>Next of Kin Details</h4>
+            </div>
+            <div class="form_div">
+              <el-form-item label="Kin" prop="item_type">
+                <el-input
+                  v-model="registerForm.kin"
+                  placeholder="Full Name of Kin"
+                >
+                </el-input>
+              </el-form-item>
+              <el-form-item label="Relationship">
+                <el-input
+                  v-model="registerForm.kin_relationship"
+                  placeholder="Relation to Kin"
+                >
+                </el-input>
+              </el-form-item>
+            </div>
+          </div>
+          <hr class="hr_rule" />
+          <div class="contact_info_section pb-20">
+            <div class="registerForm_label">
+              <h4>Security</h4>
+            </div>
+            <div class="form_div">
+              <el-row :gutter="20">
+                <el-col :xs="24" :sm="24" :md="24">
+                  <el-form-item label="Password" prop="password">
+                    <el-input v-model="registerForm.password" type="password">
+                    </el-input>
+                  </el-form-item>
+                </el-col>
+              </el-row>
+              <el-row :gutter="20">
+                <el-col :xs="24" :sm="24" :md="24">
+                  <el-form-item
+                    label="Confirm Password"
+                    prop="confirm_password"
+                  >
+                    <el-input
+                      v-model="registerForm.confirm_password"
+                      type="password"
+                    >
+                    </el-input>
+                  </el-form-item>
+                </el-col>
+              </el-row>
+            </div>
+          </div>
+          <div class="mt-20 register_btn">
+            <el-button
+              class="submit_register_button"
+              type="primary"
+              :loading="loading"
+              @click="userRegister"
+              >Create Account</el-button
+            >
+          </div>
+        </el-form>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  name: 'FormPage',
+  data() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const validatePass = (rule: any, value: string, callback: any) => {
+      if (value === '') {
+        callback(new Error('Please input the password'))
+      } else {
+        if ((this as any).registerForm.confirm_password !== '') {
+          ;(this as any).$refs.registerForm.validateField('confirm_password')
+        }
+        callback()
+      }
+    }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const validatePass2 = (rule: any, value: string, callback: any) => {
+      if (value === '') {
+        callback(new Error('Please input the password again'))
+      } else if (value !== (this as any).registerForm.password) {
+        callback(new Error("Password don't match!"))
+      } else {
+        callback()
+      }
+    }
+    return {
+      checked: false,
+      registerForm: {
+        first_name: '' as string,
+        last_name: '' as string,
+        dob: '' as string,
+        email: '' as string,
+        password: '' as string,
+        confirm_password: '',
+        phone_number: '' as string,
+        sign_up_mode: 'email' as string,
+        user_type: 'visitor' as string,
+        country_id: '' as string,
+      },
+      validation: {
+        email: [
+          {
+            required: true,
+            type: 'email',
+            message: 'Please enter valid email',
+            trigger: ['blur', 'change'],
+          },
+          { min: 5, message: 'Length should be 5 or more', trigger: 'blur' },
+        ],
+        first_name: [
+          {
+            required: true,
+            message: 'Please enter your first name',
+            trigger: ['blur', 'change'],
+          },
+        ],
+        last_name: [
+          {
+            required: true,
+            message: 'Please enter your last name',
+            trigger: ['blur', 'change'],
+          },
+        ],
+        password: [{ validator: validatePass, trigger: 'blur' }],
+        confirm_password: [{ validator: validatePass2, trigger: 'blur' }],
+      },
+    }
+  },
+  methods: {},
+})
+</script>
+
+<style lang="scss" scoped>
+$small_screen: 426px;
+$medium_screen: 769px;
+$laptop_screen: 1024px;
+.login_main_container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .login_container {
+    padding: 20px;
+    // overflow-y: scroll;
+    margin: 50px 0;
+    width: 90%;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+      0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    @media (max-width: $small_screen) {
+      width: 100%;
+      box-shadow: none;
+    }
+  }
+  @media (max-width: $medium_screen) {
+    padding-top: 20px;
+  }
+  @media (max-width: $small_screen) {
+    // min-height: 400px;
+  }
+}
+.registerForm_form {
+  padding-top: 20px;
+
+  .personal_info_section {
+    display: flex;
+  }
+  .contact_info_section {
+    padding-top: 10px;
+    display: flex;
+  }
+  .form_div {
+    // max-width: 500px;
+    width: 100%;
+    .register_first_name {
+      padding-right: 20px;
+      @media (max-width: 768px) {
+        padding-right: 0;
+      }
+    }
+  }
+}
+.registerForm_label {
+  padding-top: 10px;
+  width: 20%;
+}
+.register_btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: $small_screen) {
+  .registerForm_form {
+    .personal_info_section {
+      flex-direction: column;
+    }
+    .contact_info_section {
+      flex-direction: column;
+    }
+    .form_div {
+      max-width: 500px;
+      width: 100%;
+      .register_first_name {
+        padding-right: 0;
+      }
+    }
+    .registerForm_label {
+      padding-top: 10px;
+      width: 100%;
+      padding-bottom: 20px;
+
+      h4 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+  .user_registerForm_footer {
+    padding: 80px 0 30px;
+    width: 100%;
+    .user_img_logo {
+      width: 75.61px;
+      height: 16.3px;
+    }
+  }
+
+  .register_btn {
+    display: block;
+    .submit_register_button {
+      width: 100%;
+    }
+  }
+}
+</style>
