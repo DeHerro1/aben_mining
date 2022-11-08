@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Access Security World',
+    title: 'Access Group World',
     htmlAttrs: {
       lang: 'en',
     },

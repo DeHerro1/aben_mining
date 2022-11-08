@@ -28,8 +28,9 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .footer {
-  margin-top: 50px;
+  // margin-top: 50px;
   background: #1d1a1a;
+  z-index: 5;
 }
 .footer_content {
   color: #fff;

@@ -95,42 +95,42 @@
           <el-menu-item index="2-1"
             ><span class="p-10"
               ><NuxtLink to="/services/air-freight-transportation"
-                >Air Freight</NuxtLink
+                ><span style="color: #000">Air Freight</span></NuxtLink
               ></span
             ></el-menu-item
           >
           <el-menu-item index="2-2"
             ><span class="p-10"
               ><NuxtLink to="/services/chain-management"
-                >Chain Management</NuxtLink
+                ><span style="color: #000">Chain Management</span></NuxtLink
               ></span
             ></el-menu-item
           >
           <el-menu-item index="2-3"
             ><span class="p-10"
               ><NuxtLink to="/services/counter-surveillance"
-                >Counter Surveillance</NuxtLink
+                ><span style="color: #000">Counter Surveillance</span></NuxtLink
               ></span
             ></el-menu-item
           >
           <el-menu-item index="2-4"
             ><span class="p-10"
               ><NuxtLink to="/services/mineral-refinery"
-                >Mineral Refinery</NuxtLink
+                ><span style="color: #000">Mineral Refinery</span></NuxtLink
               ></span
             ></el-menu-item
           >
           <el-menu-item index="2-4"
             ><span class="p-10"
               ><NuxtLink to="/services/ocean-freight"
-                >Ocean Freight</NuxtLink
+                ><span style="color: #000">Ocean Freight</span></NuxtLink
               ></span
             ></el-menu-item
           >
           <el-menu-item index="2-4"
             ><span class="p-10"
               ><NuxtLink to="/services/storage-facility"
-                >Storage Facility</NuxtLink
+                ><span style="color: #000">Storage Facility</span></NuxtLink
               ></span
             ></el-menu-item
           >
@@ -224,5 +224,8 @@ $laptop_screen: 1024px;
       width: 20px;
     }
   }
+}
+.services_content {
+  color: red !important;
 }
 </style>
