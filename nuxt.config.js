@@ -2,9 +2,11 @@ export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
+  target: 'static',
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Access Group World',
+    title: 'Access Group Security',
     htmlAttrs: {
       lang: 'en',
     },
