@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="section">
       <div class="footer_content">
-        <p>Copyright © Aben Mining 2021. All Right Reserved</p>
+        <p>Copyright © Access Group Security 2021. All Right Reserved</p>
       </div>
     </div>
   </footer>
@@ -30,7 +30,8 @@ export default Vue.extend({
 .footer {
   // margin-top: 50px;
   background: #1d1a1a;
-  z-index: 5;
+  position: relative;
+  z-index: 100;
 }
 .footer_content {
   color: #fff;

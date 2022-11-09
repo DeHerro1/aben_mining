@@ -40,11 +40,11 @@
         <div class="about_first_text">
           <h3>Sustainability</h3>
           <p>
-            Aben Mining is committed to ensuring that our business practices are
-            safe, responsible and transparent, in accordance with our Core
-            Values and the principles of the UN Global Compact on human rights,
-            labour rights, environment and anti-corruption, and contributing to
-            the UN Sustainable Development Goals.
+            Access Group Security is committed to ensuring that our business
+            practices are safe, responsible and transparent, in accordance with
+            our Core Values and the principles of the UN Global Compact on human
+            rights, labour rights, environment and anti-corruption, and
+            contributing to the UN Sustainable Development Goals.
           </p>
         </div>
       </div>

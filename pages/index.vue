@@ -67,8 +67,8 @@
         <section class="d-flex justify_center">
           <p class="center w-50">
             From the farm to your refrigerator, or the factory to your wardrobe.
-            Aben is developing solutions that meet customer needs from one end
-            of the supply chain to the other.
+            Access Group Security is developing solutions that meet customer
+            needs from one end of the supply chain to the other.
           </p>
         </section>
         <div class="home_page_cards mt-30">
@@ -142,13 +142,13 @@ export default Vue.extend({
           title: 'Supply Chain Management',
           icon: 'el-icon-link',
           img: 'chain_manage1.jpg',
-          text: 'Learn more about our shipping services from 300 ports around the world. Aben Mining can connect your business globally and we make shipping simple.',
+          text: 'Learn more about our shipping services from 300 ports around the world. Access Group Security can connect your business globally and we make shipping simple.',
         },
         {
           title: 'Air Freight Transportation ',
           icon: 'el-icon-truck',
           img: 'plan_slider.jpg',
-          text: 'At Aben Mining, we can meet all your global transportation needs by our best Air Freight Services. Whether you’re shipping medical supplies to Haiti,',
+          text: 'At Access Group Security, we can meet all your global transportation needs by our best Air Freight Services. Whether you’re shipping medical supplies to Haiti,',
         },
         {
           title: 'Storage Facility',
@@ -159,21 +159,18 @@ export default Vue.extend({
       ],
       carouselContent: [
         {
-          // img: 'https://www.abenmining.com/wp-content/uploads/2021/03/1.jpg',
           img: 'airplane_cargo.jpg',
           text: 'PROVIDING FIRST CLASS FREIGHT SERVICES',
           content:
             'Access delivery is an innovative service is effective logistics solution for the delivery of small cargo. This service is useful for companies of various effective logistics scale.',
         },
         {
-          // img: 'https://www.abenmining.com/wp-content/uploads/2021/03/4.jpg',
           img: 'container2.png',
           text: 'WE HELP YOU ACHIEVE YOUR BUSINESS GOALS',
           content:
             'You can rely on our tailored solutions to be certain your goods will arrive at their destination on time. Let us help you take the steps needed to ship your cargo the best way possible.',
         },
         {
-          // img: 'https://www.abenmining.com/wp-content/uploads/2021/03/2.jpg',
           img: 'truck.png',
           text: ' MOTOR TRANSPORT OF ANY KIND & CARRYING CAPACITY',
           content:

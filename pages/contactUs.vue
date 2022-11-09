@@ -5,7 +5,7 @@
         <h2>Contact Us</h2>
       </div>
     </section>
-    <div class="section">
+    <div class="section mb-30">
       <div class="contact_sub_header">
         <h3>GET IN TOUCH</h3>
         <p>We’re here to help and answer any question you might have.</p>

@@ -1,15 +1,15 @@
 <template>
   <div class="vault_content_container">
-    <h3>Deposit Summary</h3>
+    <h3>Customer Information</h3>
     <el-card class="box-card vault_content">
-      <h4>Deposit Status</h4>
+      <h4>Depositor's information</h4>
       <div class="vault_content_header">
         <p><b>Deposit Code: </b> *****</p>
         <p><b>Deposit Date:</b> 04 May 2022</p>
       </div>
       <div class="vault_deposit_status">
         <section>
-          <p>Depositor Name:</p>
+          <p>Name:</p>
           <p>Dwayne</p>
         </section>
         <section>
@@ -47,7 +47,7 @@ import Vue from 'vue'
 // import SideBar from '../../components/vault/sidebar.vue'
 
 export default Vue.extend({
-  name: 'DepositVault',
+  name: 'CustomerInformation',
   // components: { SideBar },
   layout: 'dashboard',
 
