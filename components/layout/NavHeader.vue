@@ -20,7 +20,9 @@
         >
         <el-submenu index="2">
           <template slot="title">Our Services</template>
-          <el-menu-item index="2-1"
+          <el-menu-item
+            index="2-1"
+            @click="$router.push('/services/air-freight-transportation')"
             ><span class="p-10">Air Freight</span></el-menu-item
           >
           <el-menu-item

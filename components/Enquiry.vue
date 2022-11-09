@@ -163,6 +163,7 @@ $laptop_screen: 1024px;
   }
   @media (max-width: $small_screen) {
     display: block;
+    width: 80%;
   }
   .support_container {
     height: 250px;
@@ -178,7 +179,8 @@ $laptop_screen: 1024px;
       margin-bottom: 0;
     }
     @media (max-width: $small_screen) {
-      width: 80%;
+      width: 100%;
+      margin-bottom: 10px;
       // margin: 20px auto;
     }
     .support_inner {

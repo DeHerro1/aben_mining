@@ -51,6 +51,7 @@
                   <h2 class="pt-20 pl-20" style="color: #ff6a3e">
                     {{ content.text }}
                   </h2>
+                  <p>{{ content.content }}</p>
                 </div>
               </div>
             </el-carousel-item>
@@ -161,16 +162,22 @@ export default Vue.extend({
           // img: 'https://www.abenmining.com/wp-content/uploads/2021/03/1.jpg',
           img: 'airplane_cargo.jpg',
           text: 'PROVIDING FIRST CLASS FREIGHT SERVICES',
+          content:
+            'Access delivery is an innovative service is effective logistics solution for the delivery of small cargo. This service is useful for companies of various effective logistics scale.',
         },
         {
           // img: 'https://www.abenmining.com/wp-content/uploads/2021/03/4.jpg',
           img: 'container2.png',
           text: 'WE HELP YOU ACHIEVE YOUR BUSINESS GOALS',
+          content:
+            'You can rely on our tailored solutions to be certain your goods will arrive at their destination on time. Let us help you take the steps needed to ship your cargo the best way possible.',
         },
         {
           // img: 'https://www.abenmining.com/wp-content/uploads/2021/03/2.jpg',
           img: 'truck.png',
           text: ' MOTOR TRANSPORT OF ANY KIND & CARRYING CAPACITY',
+          content:
+            'Forwarding cargo by haulage solutions such as road and rail offer faster time-to-market than ocean shipping at a lower cost than air shipping.',
         },
       ],
       homeOffice: [
@@ -360,13 +367,25 @@ $laptop_screen: 1024px;
             line-height: 1.2em;
             padding-top: 10px;
             @media (max-width: $medium_screen) {
-              font-size: 2rem;
+              font-size: 1.3rem;
             }
             @media (max-width: $small_screen) {
-              font-size: 1.5rem;
+              font-size: 1.2rem;
+              padding-left: 0;
+            }
+          }
+          p {
+            padding: 30px 20px 0;
+            @media (max-width: $medium_screen) {
+              padding-top: 20px;
+            }
+            @media (max-width: $small_screen) {
+              padding: 0;
+              padding-top: 10px;
             }
           }
           @media (max-width: $small_screen) {
+            padding-top: 10px;
             width: 100%;
           }
         }
