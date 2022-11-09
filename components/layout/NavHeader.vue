@@ -191,7 +191,7 @@ export default Vue.extend({
   methods: {
     handleSelect(key: number) {
       sessionStorage.setItem('key', key.toString())
-      console.log(sessionStorage.getItem('key'))
+
       this.activeIndex = key.toString()
       this.drawer = false
     },
