@@ -70,9 +70,9 @@
           >Login</el-menu-item
         >
         <el-menu-item
-          @click="$router.push('/tracking')"
           index="6"
           class="side_nav_item"
+          @click="$router.push('/tracking')"
           >Track Shipment</el-menu-item
         >
       </el-menu>
