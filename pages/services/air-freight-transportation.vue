@@ -51,7 +51,7 @@
             Combine speed, flexibility, and value with our global
             airport-to-airport service available worldwide
           </p>
-          <div>
+          <div class="list_styling">
             <p>
               <i class="el-icon-right right_icon"></i>Send and receive freight
               worldwide
@@ -77,7 +77,7 @@
             one to three days available in more than 50 countries and
             territories
           </p>
-          <div>
+          <div class="list_styling">
             <p>
               <i class="el-icon-right right_icon"></i>Door-to-door service with
               routine customs clearance included
@@ -161,6 +161,7 @@ $laptop_screen: 1024px;
   display: flex;
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 20px;
   @media (max-width: $laptop_screen) {
     width: 100%;
   }
@@ -203,6 +204,12 @@ $laptop_screen: 1024px;
         color: var(--color-primary);
       }
     }
+  }
+}
+.list_styling {
+  margin-top: 5px;
+  p {
+    margin-bottom: 5px;
   }
 }
 </style>
