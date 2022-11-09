@@ -58,15 +58,15 @@
           ></NuxtLink
         >
         <el-menu-item
-          @click="$router.push('/contactUs')"
           index="4"
           class="side_nav_item"
+          @click="$router.push('/contactUs')"
           >Contact Us</el-menu-item
         >
         <el-menu-item
-          @click="$router.push('/login')"
           index="5"
           class="side_nav_item"
+          @click="$router.push('/login')"
           >Login</el-menu-item
         >
         <el-menu-item
