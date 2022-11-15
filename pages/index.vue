@@ -179,7 +179,7 @@ export default Vue.extend({
       ],
       homeOffice: [
         {
-          main_text: 'support@abenmining.com',
+          main_text: 'accessgroups2@gmail.com',
           title: 'Email Address',
           icon: 'el-icon-message',
         },
@@ -291,7 +291,7 @@ $laptop_screen: 1024px;
 .home_container {
   z-index: 4;
   position: relative;
-  top: -40px;
+  top: -150px;
   .card_container {
     width: 100%;
   }

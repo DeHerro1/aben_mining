@@ -8,7 +8,7 @@
         <p><b>Deposit Date:</b> 04 May 2022</p>
       </div>
       <div class="vault_deposit_status">
-        <section>
+        <section class="deposit_text">
           <p>Depositor Name:</p>
           <p>Dwayne</p>
         </section>
@@ -16,7 +16,7 @@
           <p>Date Deposited:</p>
           <p>20 October 2022</p>
         </section>
-        <section>
+        <section class="deposit_text">
           <p>Goods/Item Deposited:</p>
           <p>Gold bars</p>
         </section>
@@ -25,7 +25,7 @@
           <p>500kg</p>
         </section>
 
-        <section>
+        <section class="deposit_text">
           <p>Purpose:</p>
           <p>Safety</p>
         </section>
@@ -33,7 +33,7 @@
           <p>Next of Kin:</p>
           <p>Hennessy</p>
         </section>
-        <section>
+        <section class="deposit_text">
           <p>Relationship with Kin:</p>
           <p>Son</p>
         </section>
@@ -81,15 +81,25 @@ $laptop_screen: 1024px;
     .vault_deposit_status {
       width: 80%;
       margin: 0 auto;
-      &:nth-child(1) {
-        background: red;
-      }
+
       section {
-        margin-bottom: 10px;
+        // margin-bottom: 10px;
+        padding: 5px;
         display: flex;
+
         // justify-content: space-between;
+
         p {
           width: 50%;
+          font-weight: 700;
+          color: #000 !important;
+          margin-right: 5px;
+          padding: 5px;
+        }
+      }
+      .deposit_text {
+        p {
+          background: rgba(255, 106, 62, 0.7);
         }
       }
     }
