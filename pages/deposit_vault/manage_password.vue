@@ -44,7 +44,9 @@ $laptop_screen: 1024px;
   padding-top: 20px;
   height: 500px;
   margin: 20px 20px 0 310px;
-  // overflow-y: scroll;
+  @media (max-width: $medium_screen) {
+    margin-left: 210px;
+  }
   .vault_content {
     margin-top: 20px;
     padding: 20px;

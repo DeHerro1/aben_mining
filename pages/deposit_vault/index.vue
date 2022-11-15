@@ -4,6 +4,11 @@
     <el-card class="box-card vault_content">
       <h4>Deposit Status</h4>
       <div class="vault_content_header">
+        <p>Thomas Robert Bentley</p>
+        <p><b>Deposit Serial NO:</b>*****v443</p>
+        <p><b>Current Value:</b> 12,000</p>
+      </div>
+      <div class="vault_content_header">
         <p><b>Deposit Code: </b> *****</p>
         <p><b>Deposit Date:</b> 04 May 2022</p>
       </div>
@@ -65,9 +70,10 @@ $laptop_screen: 1024px;
 
 .vault_content_container {
   padding-top: 20px;
-  height: 500px;
   margin: 20px 20px 0 310px;
-  // overflow-y: scroll;
+  @media (max-width: $medium_screen) {
+    margin-left: 210px;
+  }
   .vault_content {
     margin-top: 20px;
     padding: 20px;
@@ -91,7 +97,6 @@ $laptop_screen: 1024px;
 
         p {
           width: 50%;
-          font-weight: 700;
           color: #000 !important;
           margin-right: 5px;
           padding: 5px;
