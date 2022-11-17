@@ -11,21 +11,22 @@
         >
           <div class="personal_info_section pb-20">
             <div class="registerForm_label">
-              <h4>Depositor's Details</h4>
+              <h3>Depositor's Details</h3>
             </div>
 
             <div class="form_div">
               <el-row class="first_last">
-                <el-col :xs="24" :sm="8" class="register_first_name">
+                <el-col :xs="24" :sm="24" class="register_first_name">
                   <el-form-item label="First Name" prop="first_name">
                     <el-input
                       v-model="registerForm.first_name"
                       placeholder="First name"
+                      class="w-100"
                     >
                     </el-input>
                   </el-form-item>
                 </el-col>
-                <el-col :xs="24" :sm="8" class="register_first_name">
+                <el-col :xs="24" :sm="24" class="register_first_name">
                   <el-form-item label="Last Name" prop="last_name">
                     <el-input
                       v-model="registerForm.last_name"
@@ -36,25 +37,25 @@
                 </el-col>
               </el-row>
               <el-row>
-                <el-col :xs="24" :sm="8" class="register_first_name">
+                <el-col :xs="24" :sm="24" class="register_first_name">
                   <el-form-item label="City" prop="city">
                     <el-input v-model="registerForm.city" placeholder="City">
                     </el-input>
                   </el-form-item>
                 </el-col>
-                <el-col :xs="24" :sm="8" class="register_first_name">
+                <el-col :xs="24" :sm="24" class="register_first_name">
                   <el-form-item label="Phone number">
-                    <!-- <vue-phone-number-input
-                v-model="phone"
-                :border-radius="7"
-                default-country-code="GH"
-                @update="onPhoneUpdate"
-              /> -->
+                    <el-input
+                      v-model="registerForm.phone"
+                      type="number"
+                      placeholder="0200113399"
+                    >
+                    </el-input>
                   </el-form-item>
                 </el-col>
               </el-row>
               <el-row>
-                <el-col :xs="24" :sm="8" class="register_first_name">
+                <el-col :xs="24" :sm="24" class="register_first_name">
                   <el-form-item label="ID Number" prop="id_number">
                     <el-input
                       v-model="registerForm.id_number"
@@ -63,29 +64,39 @@
                     </el-input>
                   </el-form-item>
                 </el-col>
-                <el-col :xs="24" :sm="8" class="register_first_name">
+                <el-col :xs="24" :sm="24" class="register_first_name">
                   <el-form-item label="Date of Birth" prop="dob">
-                    <el-date-picker
-                      v-model="registerForm.dob"
-                      type="date"
-                      placeholder="Pick a day"
-                    >
-                    </el-date-picker>
+                    <div class="d-flex">
+                      <el-input
+                        v-model="registerForm.day"
+                        class="dob_input"
+                        placeholder="Day"
+                      >
+                      </el-input>
+                      <el-input
+                        v-model="registerForm.month"
+                        class="dob_input"
+                        placeholder="Month"
+                      >
+                      </el-input>
+                      <el-input v-model="registerForm.year" placeholder="Year">
+                      </el-input>
+                    </div>
                   </el-form-item>
                 </el-col>
               </el-row>
               <el-row>
-                <el-col :xs="24" :sm="8" class="register_first_name">
+                <el-col :xs="24" :sm="24" class="register_first_name">
                   <el-form-item label="Gender" prop="phone">
                     <el-radio v-model="registerForm.gender" label="1"
-                      >Femail</el-radio
+                      >Female</el-radio
                     >
                     <el-radio v-model="registerForm.gender" label="2"
                       >Male</el-radio
                     >
                   </el-form-item>
                 </el-col>
-                <el-col :xs="24" :sm="8" class="register_first_name">
+                <el-col :xs="24" :sm="24" class="register_first_name">
                   <el-form-item label="State" prop="state">
                     <el-input v-model="registerForm.state" placeholder="Phone">
                     </el-input>
@@ -93,7 +104,7 @@
                 </el-col>
               </el-row>
               <el-row>
-                <el-col :xs="24" :sm="8">
+                <el-col :xs="24" :sm="24">
                   <el-form-item label="Email address" prop="email">
                     <el-input
                       v-model="registerForm.email"
@@ -110,7 +121,7 @@
           <hr class="hr_rule" />
           <div class="contact_info_section pb-20">
             <div class="registerForm_label">
-              <h4>Item Details</h4>
+              <h3>Item Details</h3>
             </div>
             <div class="form_div">
               <el-form-item label="Item Type" prop="item_type">
@@ -154,7 +165,7 @@
           <hr class="hr_rule" />
           <div class="contact_info_section pb-20">
             <div class="registerForm_label">
-              <h4>Next of Kin Details</h4>
+              <h3>Next of Kin Details</h3>
             </div>
             <div class="form_div">
               <el-form-item label="Kin" prop="item_type">
@@ -176,7 +187,7 @@
           <hr class="hr_rule" />
           <div class="contact_info_section pb-20">
             <div class="registerForm_label">
-              <h4>Security</h4>
+              <h3>Account Security</h3>
             </div>
             <div class="form_div">
               <el-row :gutter="20">
@@ -306,9 +317,12 @@ $laptop_screen: 1024px;
     padding: 20px;
     // overflow-y: scroll;
     margin: 50px 0;
-    width: 90%;
+    width: 50%;
     box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
       0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    @media (max-width: $laptop_screen) {
+      width: 60%;
+    }
     @media (max-width: $small_screen) {
       width: 100%;
       box-shadow: none;
@@ -317,34 +331,34 @@ $laptop_screen: 1024px;
   @media (max-width: $medium_screen) {
     padding-top: 20px;
   }
-  @media (max-width: $small_screen) {
-    // min-height: 400px;
-  }
 }
 .registerForm_form {
   padding-top: 20px;
 
   .personal_info_section {
-    display: flex;
+    // display: flex;
   }
   .contact_info_section {
     padding-top: 10px;
-    display: flex;
+    // display: flex;
   }
   .form_div {
-    // max-width: 500px;
-    width: 100%;
+    margin-left: 50px;
     .register_first_name {
       padding-right: 20px;
       @media (max-width: 768px) {
         padding-right: 0;
       }
     }
+    @media (max-width: 768px) {
+      margin-left: 20px;
+    }
   }
 }
 .registerForm_label {
   padding-top: 10px;
-  width: 20%;
+  padding-bottom: 20px;
+  // width: 20%;
 }
 .register_btn {
   display: flex;
@@ -353,27 +367,12 @@ $laptop_screen: 1024px;
 
 @media (max-width: $small_screen) {
   .registerForm_form {
-    .personal_info_section {
-      flex-direction: column;
-    }
-    .contact_info_section {
-      flex-direction: column;
-    }
     .form_div {
       max-width: 500px;
       width: 100%;
+      margin-left: 0;
       .register_first_name {
         padding-right: 0;
-      }
-    }
-    .registerForm_label {
-      padding-top: 10px;
-      width: 100%;
-      padding-bottom: 20px;
-
-      h4 {
-        font-size: 20px;
-        font-weight: 700;
       }
     }
   }

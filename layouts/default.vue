@@ -1,6 +1,7 @@
 <template>
   <el-container style="height: 100vh">
     <el-main style="display: flex; flex-direction: column; padding: 0">
+      <TopHeader />
       <NavHeader />
       <Nuxt />
       <Footer />
@@ -11,6 +12,7 @@
 <script>
 import Footer from '../components/layout/Footer.vue'
 import NavHeader from '../components/layout/NavHeader.vue'
+import TopHeader from '../components/layout/TopHeader.vue'
 // import Vue from 'vue'
 // import global from '~/mixins/global.ts'
 
@@ -20,6 +22,7 @@ export default {
   components: {
     Footer,
     NavHeader,
+    TopHeader,
   },
 }
 </script>

@@ -209,6 +209,7 @@ $laptop_screen: 1024px;
   z-index: 100;
   .header_logo > img {
     height: 50px;
+    cursor: pointer;
     width: 60px;
   }
   .service {

@@ -144,3 +144,25 @@
     height: 40px;
   }
 }
+
+.dob_input {
+  margin-right: 5px;
+}
+.el-form--label-top .el-form-item__label {
+  width: 20%;
+  margin-right: 5px;
+}
+.el-form-item__content {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .el-form--label-top .el-form-item__label {
+    width: 30%;
+  }
+  .el-form-item {
+    flex-direction: column;
+  }
+}
+.el-form-item {
+  display: flex;
+}

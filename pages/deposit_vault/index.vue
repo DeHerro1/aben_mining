@@ -4,11 +4,16 @@
     <el-card class="box-card vault_content">
       <h4>Deposit Status</h4>
       <div class="vault_content_header">
+        <p>Thomas Robert Bentley</p>
+        <p><b>Deposit Serial NO:</b>*****v443</p>
+        <p><b>Current Value:</b> 12,000</p>
+      </div>
+      <div class="vault_content_header">
         <p><b>Deposit Code: </b> *****</p>
         <p><b>Deposit Date:</b> 04 May 2022</p>
       </div>
       <div class="vault_deposit_status">
-        <section>
+        <section class="deposit_text">
           <p>Depositor Name:</p>
           <p>Dwayne</p>
         </section>
@@ -16,7 +21,7 @@
           <p>Date Deposited:</p>
           <p>20 October 2022</p>
         </section>
-        <section>
+        <section class="deposit_text">
           <p>Goods/Item Deposited:</p>
           <p>Gold bars</p>
         </section>
@@ -25,7 +30,7 @@
           <p>500kg</p>
         </section>
 
-        <section>
+        <section class="deposit_text">
           <p>Purpose:</p>
           <p>Safety</p>
         </section>
@@ -33,7 +38,7 @@
           <p>Next of Kin:</p>
           <p>Hennessy</p>
         </section>
-        <section>
+        <section class="deposit_text">
           <p>Relationship with Kin:</p>
           <p>Son</p>
         </section>
@@ -65,9 +70,10 @@ $laptop_screen: 1024px;
 
 .vault_content_container {
   padding-top: 20px;
-  height: 500px;
   margin: 20px 20px 0 310px;
-  // overflow-y: scroll;
+  @media (max-width: $medium_screen) {
+    margin-left: 210px;
+  }
   .vault_content {
     margin-top: 20px;
     padding: 20px;
@@ -81,15 +87,24 @@ $laptop_screen: 1024px;
     .vault_deposit_status {
       width: 80%;
       margin: 0 auto;
-      &:nth-child(1) {
-        background: red;
-      }
+
       section {
-        margin-bottom: 10px;
+        // margin-bottom: 10px;
+        padding: 5px;
         display: flex;
+
         // justify-content: space-between;
+
         p {
           width: 50%;
+          color: #000 !important;
+          margin-right: 5px;
+          padding: 5px;
+        }
+      }
+      .deposit_text {
+        p {
+          background: rgba(255, 106, 62, 0.7);
         }
       }
     }

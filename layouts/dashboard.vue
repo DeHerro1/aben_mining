@@ -32,9 +32,13 @@ export default {
 .deposit_vault_container {
   height: 80vh;
 }
+@media (min-width: 1024px) {
+  .dash_footer {
+    position: absolute;
+    bottom: 0;
+  }
+}
 .dash_footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   margin-top: 20px;
 }

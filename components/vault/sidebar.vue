@@ -93,6 +93,9 @@ $laptop_screen: 1024px;
   height: 90vh;
 
   position: fixed;
+  @media (max-width: $medium_screen) {
+    width: 200px !important;
+  }
 }
 .sidebar {
   height: 100%;
