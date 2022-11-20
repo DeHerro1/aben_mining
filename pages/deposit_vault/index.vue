@@ -1,12 +1,15 @@
 <template>
-  <div class="vault_content_container">
+  <div class="vault_content_container" v-loading="loading">
     <h3>Deposit Summary</h3>
     <el-card class="box-card vault_content">
       <h4>Deposit Status</h4>
       <div class="vault_content_header">
-        <p>{{ depositor.firstName }} {{ depositor.lastName }}</p>
+        <p>
+          {{ depositor && depositor.firstName }}
+          {{ depositor && depositor.lastName }}
+        </p>
         <p><b>Deposit Serial NO:</b>*****v443</p>
-        <p><b>Current Value:</b> {{ depositor.item_value }}</p>
+        <p><b>Current Value:</b> {{ depositor && depositor.item_value }}</p>
       </div>
       <div class="vault_content_header">
         <p><b>Deposit Code: </b> *****</p>
@@ -61,27 +64,20 @@ export default Vue.extend({
 
   data() {
     return {
-      depositorID: this.$route.query.id as string,
       loading: false as boolean,
       depositor: {},
     }
   },
-  async created() {
-    localStorage.setItem('5%5od4po43', this.depositorID)
-    //  localStorage.setItem("authToken", Json.stringify(this.depositorID))
+  async mounted() {
     this.loading = true
     try {
-      const depositors = await this.$axios.get('/deposits')
-
-      const deposit = depositors.data.data.find(
-        (depo: any) => depo.password === this.depositorID
-      )
+      const id = localStorage.getItem('5%5od4po43')
+      const deposits = await this.$axios.get('/deposits')
+      const deposit = deposits.data.data.find((depo: any) => depo._id === id)
       console.log(deposit)
       this.depositor = deposit
-
       this.loading = false
     } catch (error) {
-      console.log(error)
       this.loading = false
     }
   },
@@ -97,6 +93,7 @@ $laptop_screen: 1024px;
 .vault_content_container {
   padding-top: 20px;
   margin: 20px 20px 0 310px;
+  min-height: 500px;
   @media (max-width: $medium_screen) {
     margin-left: 210px;
   }

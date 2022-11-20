@@ -63,10 +63,7 @@ export default Vue.extend({
         type: 'warning',
       })
         .then(() => {
-          // this.$message({
-          //   type: 'success',
-          //   message: 'Logout successful',
-          // })
+          localStorage.removeItem('5%5od4po43')
           this.$router.replace('/')
         })
         .catch(() => {})

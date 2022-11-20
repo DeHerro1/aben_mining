@@ -222,10 +222,13 @@ export default Vue.extend({
           (depo: any) => depo.password === this.tracking_id
         )
         if (deposit) {
+          // await this.$store.dispatch('getDepositId', this.tracking_id)
+          // await this.$store.dispatch('getDepositor', deposit)
+          localStorage.setItem('5%5od4po43', deposit._id)
           this.$router.push({
             name: 'deposit_vault',
             query: {
-              id: this.tracking_id,
+              id: deposit._id,
             },
           })
         } else {

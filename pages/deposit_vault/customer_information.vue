@@ -1,5 +1,5 @@
 <template>
-  <div class="vault_content_container">
+  <div class="vault_content_container" v-loading="loading">
     <h3>Customer Information</h3>
     <el-card class="box-card vault_content">
       <h4>Depositor's Details</h4>
@@ -10,40 +10,44 @@
       <div class="vault_deposit_status">
         <section class="deposit_text">
           <p>Name:</p>
-          <p>{{ depositor.firstName }} {{ depositor.lastName }}</p>
+          <p v-if="depositor">
+            {{ depositor.firstName }} {{ depositor.lastName }}
+          </p>
         </section>
         <section>
           <p>Date Deposited:</p>
-          <p>{{ $moment(depositor.createdAt).format('DD MMM, YY') }}</p>
+          <p v-if="depositor">
+            {{ $moment(depositor.createdAt).format('DD MMM, YY') }}
+          </p>
         </section>
         <section class="deposit_text">
           <p>Goods/Item Deposited:</p>
-          <p>{{ depositor.item_type }}</p>
-        </section>
-        <section class="deposit_text">
-          <p>Goods/Item Value:</p>
-          <p>{{ depositor.item_value }}</p>
+          <p v-if="depositor">{{ depositor.item_type }}</p>
         </section>
         <section>
+          <p>Goods/Item Value:</p>
+          <p v-if="depositor">{{ depositor.item_value }}</p>
+        </section>
+        <section class="deposit_text">
           <p>Quantity:</p>
-          <p>{{ depositor.quantity }}</p>
+          <p v-if="depositor">{{ depositor.quantity }}</p>
         </section>
 
-        <section class="deposit_text">
+        <section>
           <p>Purpose:</p>
           <p>Safety</p>
         </section>
         <section class="deposit_text">
           <p>Description:</p>
-          <p>{{ depositor.item_description }}</p>
+          <p v-if="depositor">{{ depositor.item_description }}</p>
         </section>
         <section>
           <p>Next of Kin:</p>
-          <p>{{ depositor.next_of_kin }}</p>
+          <p v-if="depositor">{{ depositor.next_of_kin }}</p>
         </section>
         <section class="deposit_text">
           <p>Relationship with Kin:</p>
-          <p>{{ depositor.relationship }}</p>
+          <p v-if="depositor">{{ depositor.relationship }}</p>
         </section>
       </div>
     </el-card>
@@ -52,34 +56,28 @@
 
 <script lang="ts">
 import Vue from 'vue'
-// import SideBar from '../../components/vault/sidebar.vue'
 
 export default Vue.extend({
   name: 'CustomerInformation',
-  // components: { SideBar },
   layout: 'dashboard',
 
   data() {
     return {
       loading: false,
-      depositor: {},
       depositorID: 0,
+      depositor: {},
     }
   },
-  async created() {
+  async mounted() {
     this.loading = true
     try {
-      const depositors = await this.$axios.get('/deposits')
+      const id = localStorage.getItem('5%5od4po43')
+      const deposits = await this.$axios.get('/deposits')
+      const deposit = deposits.data.data.find((depo: any) => depo._id === id)
 
-      const deposit = depositors.data.data.find(
-        (depo: any) => depo.password === this.depositorID
-      )
-      console.log(deposit)
       this.depositor = deposit
-
       this.loading = false
     } catch (error) {
-      console.log(error)
       this.loading = false
     }
   },
@@ -94,7 +92,7 @@ $laptop_screen: 1024px;
 
 .vault_content_container {
   padding-top: 20px;
-  height: 500px;
+  min-height: 500px;
   margin: 20px 20px 0 310px;
   @media (max-width: $medium_screen) {
     margin-left: 210px;
