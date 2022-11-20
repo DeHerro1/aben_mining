@@ -4,43 +4,46 @@
     <el-card class="box-card vault_content">
       <h4>Deposit Status</h4>
       <div class="vault_content_header">
-        <p>Thomas Robert Bentley</p>
+        <p>{{ depositor.firstName }} {{ depositor.lastName }}</p>
         <p><b>Deposit Serial NO:</b>*****v443</p>
-        <p><b>Current Value:</b> 12,000</p>
+        <p><b>Current Value:</b> {{ depositor.item_value }}</p>
       </div>
       <div class="vault_content_header">
         <p><b>Deposit Code: </b> *****</p>
-        <p><b>Deposit Date:</b> 04 May 2022</p>
+        <p>
+          <b>Deposit Date:</b>
+          {{ $moment(depositor.createdAt).format('DD MMM, YY') }}
+        </p>
       </div>
       <div class="vault_deposit_status">
         <section class="deposit_text">
           <p>Depositor Name:</p>
-          <p>Dwayne</p>
+          <p>{{ depositor.firstName }} {{ depositor.lastName }}</p>
         </section>
         <section>
           <p>Date Deposited:</p>
-          <p>20 October 2022</p>
+          <p>{{ $moment(depositor.createdAt).format('DD MMM, YY') }}</p>
         </section>
         <section class="deposit_text">
           <p>Goods/Item Deposited:</p>
-          <p>Gold bars</p>
+          <p>{{ depositor.item_type }}</p>
         </section>
         <section>
           <p>Quantity:</p>
-          <p>500kg</p>
+          <p>{{ depositor.quantity }}</p>
         </section>
 
         <section class="deposit_text">
           <p>Purpose:</p>
-          <p>Safety</p>
+          <p>{{ depositor.item_description }}</p>
         </section>
         <section>
           <p>Next of Kin:</p>
-          <p>Hennessy</p>
+          <p>{{ depositor.next_of_kin }}</p>
         </section>
         <section class="deposit_text">
           <p>Relationship with Kin:</p>
-          <p>Son</p>
+          <p>{{ depositor.relationship }}</p>
         </section>
       </div>
     </el-card>
@@ -57,7 +60,30 @@ export default Vue.extend({
   layout: 'dashboard',
 
   data() {
-    return {}
+    return {
+      depositorID: this.$route.query.id as string,
+      loading: false as boolean,
+      depositor: {},
+    }
+  },
+  async created() {
+    localStorage.setItem('5%5od4po43', this.depositorID)
+    //  localStorage.setItem("authToken", Json.stringify(this.depositorID))
+    this.loading = true
+    try {
+      const depositors = await this.$axios.get('/deposits')
+
+      const deposit = depositors.data.data.find(
+        (depo: any) => depo.password === this.depositorID
+      )
+      console.log(deposit)
+      this.depositor = deposit
+
+      this.loading = false
+    } catch (error) {
+      console.log(error)
+      this.loading = false
+    }
   },
   methods: {},
 })

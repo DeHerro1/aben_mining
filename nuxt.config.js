@@ -39,7 +39,20 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/axios', '@nuxtjs/moment', '@nuxtjs/auth-next'],
+
+  axios: {
+    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+    // http://localhost:8000/api/v1
+    // baseURL: 'https://newapi.dwellys.com/api',
+    baseURL: 'https://boiling-badlands-97720.herokuapp.com/api/v1',
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+    // "http://127.0.0.1:8000/api/v3"
+    //  process.env.NODE_ENV !== "production"
+    // ? : "https://newapi.dwellys.com/api/v3"
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

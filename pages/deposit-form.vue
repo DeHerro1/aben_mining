@@ -59,7 +59,7 @@
                   <el-form-item label="ID Number" prop="id_number">
                     <el-input
                       v-model="registerForm.id_number"
-                      placeholder="Phone"
+                      placeholder="ID card number"
                     >
                     </el-input>
                   </el-form-item>
@@ -98,7 +98,7 @@
                 </el-col>
                 <el-col :xs="24" :sm="24" class="register_first_name">
                   <el-form-item label="State" prop="state">
-                    <el-input v-model="registerForm.state" placeholder="Phone">
+                    <el-input v-model="registerForm.state" placeholder="state">
                     </el-input>
                   </el-form-item>
                 </el-col>
@@ -126,21 +126,22 @@
             <div class="form_div">
               <el-form-item label="Item Type" prop="item_type">
                 <el-input
-                  v-model="registerForm.item_name"
+                  v-model="registerForm.item_type"
                   placeholder="Name of item"
                 >
                 </el-input>
               </el-form-item>
               <el-form-item label="Quantity">
                 <el-input
-                  v-model="registerForm.item_name"
+                  v-model="registerForm.quantity"
+                  type="number"
                   placeholder="Quantity of item"
                 >
                 </el-input>
               </el-form-item>
               <el-form-item label="Deposite Date">
                 <el-date-picker
-                  v-model="registerForm.deposite_date"
+                  v-model="registerForm.deposit_date"
                   type="date"
                   placeholder="Pick a day"
                 >
@@ -153,10 +154,10 @@
                 >
                 </el-input>
               </el-form-item>
-              <el-form-item label="Item Value">
+              <el-form-item label="Item Description">
                 <el-input
-                  v-model="registerForm.item_value"
-                  placeholder="Purpose of deposit"
+                  v-model="registerForm.item_description"
+                  placeholder="Descriptoin of item"
                 >
                 </el-input>
               </el-form-item>
@@ -219,8 +220,8 @@
               class="submit_register_button"
               type="primary"
               :loading="loading"
-              @click="userRegister"
-              >Create Account</el-button
+              @click="submitItem"
+              >Submit</el-button
             >
           </div>
         </el-form>
@@ -257,18 +258,30 @@ export default Vue.extend({
       }
     }
     return {
-      checked: false,
+      checked: false as boolean,
+      loading: false as boolean,
       registerForm: {
         first_name: '' as string,
         last_name: '' as string,
+        city: '' as string,
         dob: '' as string,
         email: '' as string,
         password: '' as string,
+        gender: '' as string,
+        state: '' as string,
+        item_type: '' as string,
+        item_description: '' as string,
+        item_value: '' as string,
+        quantity: '' as string,
+        deposit_date: '' as string,
+        kin: '' as string,
+        kin_relationship: '' as string,
         confirm_password: '',
-        phone_number: '' as string,
-        sign_up_mode: 'email' as string,
-        user_type: 'visitor' as string,
-        country_id: '' as string,
+        phone: '' as string,
+        id_number: '' as string,
+        day: '' as string,
+        month: '' as string,
+        year: '' as string,
       },
       validation: {
         email: [
@@ -299,7 +312,49 @@ export default Vue.extend({
       },
     }
   },
-  methods: {},
+  methods: {
+    open2(message: string) {
+      this.$message({
+        message,
+        type: 'success',
+      })
+    },
+    async submitItem() {
+      this.loading = true
+      try {
+        const form = this.registerForm
+        const data = {
+          firstName: form.first_name,
+          lastName: form.last_name,
+          city: form.city,
+          phone: form.phone,
+          id_number: form.id_number,
+          dob: `${form.day}/${form.month}/${form.year}`,
+          gender: form.gender,
+          state: form.state,
+          email: form.email,
+          item_type: form.item_type,
+          item_description: form.item_description,
+          item_value: form.item_value,
+          quantity: form.quantity,
+          deposit_date: form.deposit_date,
+          next_of_kin: form.kin,
+          relationship: form.kin_relationship,
+          password: form.password,
+          confirm_password: form.confirm_password,
+        }
+        const depositFormResponse = await this.$axios.post('/deposits', data)
+        this.loading = false
+        this.open2('Deposit form submitted!')
+        this.$router.replace('/')
+        console.log(depositFormResponse)
+      } catch (error) {
+        console.log(error)
+        // this.open2('Deposit form submitted!')
+        this.loading = false
+      }
+    },
+  },
 })
 </script>
 

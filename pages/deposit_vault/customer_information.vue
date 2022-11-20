@@ -10,32 +10,40 @@
       <div class="vault_deposit_status">
         <section class="deposit_text">
           <p>Name:</p>
-          <p>Dwayne</p>
+          <p>{{ depositor.firstName }} {{ depositor.lastName }}</p>
         </section>
         <section>
           <p>Date Deposited:</p>
-          <p>20 October 2022</p>
+          <p>{{ $moment(depositor.createdAt).format('DD MMM, YY') }}</p>
         </section>
         <section class="deposit_text">
           <p>Goods/Item Deposited:</p>
-          <p>Gold bars</p>
+          <p>{{ depositor.item_type }}</p>
+        </section>
+        <section class="deposit_text">
+          <p>Goods/Item Value:</p>
+          <p>{{ depositor.item_value }}</p>
         </section>
         <section>
           <p>Quantity:</p>
-          <p>500kg</p>
+          <p>{{ depositor.quantity }}</p>
         </section>
 
         <section class="deposit_text">
           <p>Purpose:</p>
           <p>Safety</p>
         </section>
+        <section class="deposit_text">
+          <p>Description:</p>
+          <p>{{ depositor.item_description }}</p>
+        </section>
         <section>
           <p>Next of Kin:</p>
-          <p>Hennessy</p>
+          <p>{{ depositor.next_of_kin }}</p>
         </section>
         <section class="deposit_text">
           <p>Relationship with Kin:</p>
-          <p>Son</p>
+          <p>{{ depositor.relationship }}</p>
         </section>
       </div>
     </el-card>
@@ -52,7 +60,28 @@ export default Vue.extend({
   layout: 'dashboard',
 
   data() {
-    return {}
+    return {
+      loading: false,
+      depositor: {},
+      depositorID: 0,
+    }
+  },
+  async created() {
+    this.loading = true
+    try {
+      const depositors = await this.$axios.get('/deposits')
+
+      const deposit = depositors.data.data.find(
+        (depo: any) => depo.password === this.depositorID
+      )
+      console.log(deposit)
+      this.depositor = deposit
+
+      this.loading = false
+    } catch (error) {
+      console.log(error)
+      this.loading = false
+    }
   },
   methods: {},
 })

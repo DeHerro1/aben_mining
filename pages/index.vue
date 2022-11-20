@@ -14,7 +14,13 @@
               placeholder="TRACKING ID"
             ></el-input>
             <div class="tracking_btn_container">
-              <el-button type="danger" class="tracking_btn">TRACKING</el-button>
+              <el-button
+                type="danger"
+                class="tracking_btn"
+                :loading="loading"
+                @click="showTracking"
+                >TRACKING</el-button
+              >
             </div>
           </div>
         </div>
@@ -137,6 +143,7 @@ export default Vue.extend({
   name: 'IndexPage',
   data() {
     return {
+      loading: false as boolean,
       transport: [
         {
           title: 'Supply Chain Management',
@@ -200,6 +207,35 @@ export default Vue.extend({
   methods: {
     getImg(img: string) {
       return require(`../assets/img/${img}`)
+    },
+    open2(message: string) {
+      this.$message({
+        message,
+        type: 'error',
+      })
+    },
+    async showTracking() {
+      this.loading = true
+      try {
+        const deposits = await this.$axios.get('/deposits')
+        const deposit = deposits.data.data.find(
+          (depo: any) => depo.password === this.tracking_id
+        )
+        if (deposit) {
+          this.$router.push({
+            name: 'deposit_vault',
+            query: {
+              id: this.tracking_id,
+            },
+          })
+        } else {
+          this.open2('Incorrect tracking ID')
+        }
+        this.loading = false
+      } catch (error) {
+        console.log(error)
+        this.loading = false
+      }
     },
   },
 })
