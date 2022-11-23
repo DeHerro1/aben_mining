@@ -5,17 +5,31 @@
       <div>
         <div class="pb-20">
           <label for="security_code">Security Code</label>
-          <el-input id="security_code" class="mt-5"></el-input>
+          <el-input
+            id="security_code"
+            v-model="form.passcode"
+            class="mt-5"
+          ></el-input>
         </div>
         <div class="pt-10 pb-20">
           <label for="transaction_code">Transaction Code</label>
-          <el-input id="transaction_code" class="mt-5"></el-input>
+          <el-input
+            id="transaction_code"
+            v-model="form.transaction_code"
+            class="mt-5"
+          ></el-input>
         </div>
         <div class="pb-20">
           <el-checkbox v-model="checked">Remember Me</el-checkbox>
         </div>
         <div class="px-20">
-          <el-button type="primary" style="width: 100%">Login</el-button>
+          <el-button
+            type="primary"
+            style="width: 100%"
+            :loading="loading"
+            @click="login"
+            >Login</el-button
+          >
         </div>
         <div class="pt-20 pl-10">
           <p style="color: #de0b0b; cursor: pointer">
@@ -35,9 +49,43 @@ export default Vue.extend({
   data() {
     return {
       checked: false,
+      form: {
+        passcode: '' as string,
+        transaction_code: '' as string,
+      },
+      loading: false as boolean,
     }
   },
-  methods: {},
+  methods: {
+    open2(message: string, messageType: any) {
+      this.$message({
+        message,
+        type: messageType,
+      })
+    },
+    async login() {
+      this.loading = true
+      try {
+        const loginResponse = await this.$axios.get(
+          `/users/login/${this.form.passcode}/${this.form.transaction_code}`
+        )
+        this.open2('Logged in successful!', 'success')
+        this.loading = false
+        localStorage.setItem('5%5od4pogift', loginResponse.data.data[0]._id)
+        this.$router.push({
+          name: 'depositors',
+          query: {
+            id: loginResponse.data.data[0]._id,
+            name: loginResponse.data.data[0].name,
+          },
+        })
+      } catch (error) {
+        console.log(error)
+        this.open2('Incorrect user credentials!', 'error')
+        this.loading = false
+      }
+    },
+  },
 })
 </script>
 
@@ -47,7 +95,7 @@ $medium_screen: 769px;
 $laptop_screen: 1024px;
 .login_main_container {
   width: 100%;
-  height: 640px;
+  min-height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;

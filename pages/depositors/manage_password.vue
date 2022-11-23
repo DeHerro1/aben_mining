@@ -5,14 +5,16 @@
       <div class="password_content">
         <div class="pt-10">
           <label for="old_password">Old Password</label>
-          <el-input v-model="pass.old_password"></el-input>
+          <el-input></el-input>
         </div>
         <div class="pt-20">
           <label for="old_password">New Password</label>
-          <el-input v-model="pass.new_password"></el-input>
+          <el-input></el-input>
         </div>
         <div class="change_pass_btn">
-          <el-button type="primary">Change Password</el-button>
+          <el-button type="primary" @click="changePassword"
+            >Change Password</el-button
+          >
         </div>
       </div>
     </el-card>
@@ -24,31 +26,31 @@ import Vue from 'vue'
 // import SideBar from '../../components/vault/sidebar.vue'
 
 export default Vue.extend({
-  name: 'ManagePassword',
+  name: 'AdminManagePassword',
   // components: { SideBar },
-  layout: 'dashboard',
+  layout: 'adminDash',
 
   data() {
     return {
-      pass: {
-        new_password: '',
-        old_password: '',
-      },
+      admin: '',
     }
   },
-  mounted() {},
+  async created() {
+    try {
+      const id = localStorage.getItem('5%5od4pogift')
+      const users = await this.$axios.get(`/users`)
+
+      const admin = users.data.data.find((user) => user._id === id)
+      console.log('user', admin)
+      this.admin = admin
+    } catch (error) {}
+  },
   methods: {
-    async changePassword() {
-      try {
-        const id = localStorage.getItem('5%5od4po43')
-        // const deposits = await this.$axios.get('/deposits')
-        // const deposit = deposits.data.data.find((depo: any) => depo._id === id)
-        const depositRes = await this.$axios.patch(`/deposits/${id}`, this.pass)
-        console.log(depositRes)
-      } catch (error) {
-        console.log(error)
-      }
-    },
+    //  async changePassword() {
+    //     try {
+    //     } catch (error) {
+    //     }
+    //   }
   },
 })
 </script>

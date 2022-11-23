@@ -26,11 +26,11 @@
             </p>
             <p class="pb-10">
               We have innovated our supply chain management solutions to enable
-              our customers to stay ahead every time. Aben SCM solutions combine
-              shipment data and stakeholder management systems to streamline
-              your logistics end-to-end. The solutions are digitally enabled by
-              modern technology platforms making supply chains simpler and
-              better connected all the way.
+              our customers to stay ahead every time. Access Group Security SCM
+              solutions combine shipment data and stakeholder management systems
+              to streamline your logistics end-to-end. The solutions are
+              digitally enabled by modern technology platforms making supply
+              chains simpler and better connected all the way.
             </p>
           </div>
           <div class="pt-20">
@@ -43,12 +43,12 @@
           </div>
         </div>
         <section class="mt-30">
-          <h3>MyAbenSupplychain</h3>
+          <h3>MyAccessSupplychain</h3>
           <p class="pb-10">
             In an increasingly complex world, keeping track of all your
             shipments around the world is not simple. The right tools can make
             it easier.<br />
-            MyAbenSupplychain was developed to save you time, enabling you to
+            MyAccessSupplychain was developed to save you time, enabling you to
             manage your entire supply chain whenever necessary. The interactive
             SCM dashboard can help you control, manage and monitor your supply
             chains in just a few clicks.
@@ -59,10 +59,10 @@
             <h3>The result</h3>
             <div>
               <p class="pb-10">
-                As a direct result of the Aben SCM services, the customer’s
-                supplier performance improved significantly after just one year
-                of having the program in place. The new process also showed
-                multiple benefits to the customer, such as
+                As a direct result of the Access Group Security SCM services,
+                the customer’s supplier performance improved significantly after
+                just one year of having the program in place. The new process
+                also showed multiple benefits to the customer, such as
               </p>
               <ul>
                 <li>
@@ -121,7 +121,7 @@
           <section class="mt-20">
             <h3>Flexibility to shape your lifestyle supply chain</h3>
             <p class="pb-10">
-              Aben’s integrated approach to ocean and logistics services
+              Access's integrated approach to ocean and logistics services
               provides us with a unique advantage – the ability to tailor
               logistics solutions according to your business requirements. It
               includes our expertise to handle your entire supply chain

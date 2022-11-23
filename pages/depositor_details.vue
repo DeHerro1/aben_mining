@@ -1,6 +1,11 @@
 <template>
   <div class="deposit_details">
-    <h4 class="pb-20">Depositor Details</h4>
+    <div class="d-flex pb-20">
+      <NuxtLink to="/depositors"
+        ><span class="backDirection"><i class="el-icon-back"></i> </span
+      ></NuxtLink>
+      <h4 class="pt-5 pl-20">Depositor Details</h4>
+    </div>
     <div class="d-flex justify_around pt-20">
       <section class="listing_bar">
         <p>Depositor name</p>
@@ -142,7 +147,7 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'DepositorDetails',
-  layout: 'dashboard',
+  layout: 'adminDash',
   data() {
     return {
       activeName: 'first' as string,
@@ -187,13 +192,15 @@ export default Vue.extend({
           console.log(err)
         })
     },
-    updateDeposit() {},
+    async updateDeposit() {
+      // const deposits = await this.$axios.update('/deposits', )
+    },
 
     async deleteDepositor(id: string) {
       this.deleteLoading = true
       console.log(id)
       try {
-        const ListingResponse = await this.$axios.delete('/delete')
+        const ListingResponse = await this.$axios.delete('/deposits')
 
         console.log(ListingResponse)
 
@@ -218,7 +225,15 @@ $medium_screen: 769px;
 }
 .deposit_details {
   padding-top: 20px;
-  min-height: 500px;
+  height: 700px;
+  overflow-y: scroll;
+  padding-bottom: 50px;
   margin: 20px 20px 0 310px;
+}
+.backDirection {
+  color: black;
+  i {
+    font-size: 30px;
+  }
 }
 </style>

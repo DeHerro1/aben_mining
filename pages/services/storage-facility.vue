@@ -12,24 +12,24 @@
             <h3 class="pb-10">PHYSICAL GOLD STORAGE SOLUTIONS</h3>
 
             <p class="pb-10">
-              Aben Mining Vaults is a purpose built facility CBD built to hold
-              the weight of bullion as well as any other items that you need to
-              keep safe. As a subsidiary of Pallion, West Point Security Company
-              Vaults is not only built on solid bedrock, but also on 40+ years
-              of trusted experience in the bullion industry. Our Vaults has 4
-              different size safety deposit boxes available: Envelope (15kg),
-              Small (60kg), Medium (120kg) and Large (800kg). Specifically
-              designed for the storage of bullion, we have boxes that will hold
-              all types of bullion from single ounce coins all the way through
-              to 15kg silver bars and monster boxes.
+              Access Group Security Vaults is a purpose built facility CBD built
+              to hold the weight of bullion as well as any other items that you
+              need to keep safe. As a subsidiary of Pallion, West Point Security
+              Company Vaults is not only built on solid bedrock, but also on 40+
+              years of trusted experience in the bullion industry. Our Vaults
+              has 4 different size safety deposit boxes available: Envelope
+              (15kg), Small (60kg), Medium (120kg) and Large (800kg).
+              Specifically designed for the storage of bullion, we have boxes
+              that will hold all types of bullion from single ounce coins all
+              the way through to 15kg silver bars and monster boxes.
             </p>
             <p class="pb-10">
-              Aben Vaults opened for business in 2002 and is the A privately
-              owned and operated safe deposit box company with multiple high
-              security vaults. Our safety Vaults was established with the
-              purpose of renting safe deposit boxes, bullion safes and strong
-              rooms for the safe guarding of Gold, Diamond and Silver, Money,
-              Jewelry, personal irreplaceable items and Personal Valuable
+              Access Group Security Vaults opened for business in 2002 and is
+              the A privately owned and operated safe deposit box company with
+              multiple high security vaults. Our safety Vaults was established
+              with the purpose of renting safe deposit boxes, bullion safes and
+              strong rooms for the safe guarding of Gold, Diamond and Silver,
+              Money, Jewelry, personal irreplaceable items and Personal Valuable
               Documents. Our staff are committed and pride themselves on the
               per-eminent level of service we provide to each and every customer
               ensuring that the exceptional service represents the first class

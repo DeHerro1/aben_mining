@@ -87,7 +87,7 @@
               consumer, omnichannel sales and digitisation are shaping the
               industry and driving complexity into retail supply chains. As a
               retailer, this makes it vital for you to relook at the way you do
-              business. Every single day. With Aben’s retail solutions, that’s
+              business. Every single day. With Access's retail solutions, that’s
               exactly what we’ll enable you to do
             </p>
             <p class="pb-10 pt-10">

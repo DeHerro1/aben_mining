@@ -11,7 +11,7 @@
           <div class="pr-20">
             <h3>How It Works?</h3>
             <p class="pb-10 pt-10">
-              Aben Logistics is an International licensed GOLD Refinery
+              Access Group Security is an International licensed GOLD Refinery
               registered in the world with registration ID
               <span>CA-134,457</span>. It operates as a limited liability
               company limited by shares. The Company refines gold for the local
@@ -38,16 +38,16 @@
               We are equipped to provide assaying, refining, bullion trading,
               gold jewellery manufacturing and wholesaling. With an initial
               expectant production capacity of 100 metric tons as well as 20
-              tons of jewellery on an annual basis, Aben Mining is positioned to
-              be a first class contender in the mining industry.
+              tons of jewellery on an annual basis, Access Group Security is
+              positioned to be a first class contender in the mining industry.
             </p>
             <p class="pb-10">
-              Aben Mining is well equipped to provide assaying, refining,
-              bullion trading, gold jewellery manufacturing and wholesaling.
-              With an initial expectant production capacity of 100 metric tons
-              as well as 20 tons of jewellery on an annual basis, Forecast
-              Logistics is positioned to be a first class contender in the
-              mining industry.
+              Access Group Security is well equipped to provide assaying,
+              refining, bullion trading, gold jewellery manufacturing and
+              wholesaling. With an initial expectant production capacity of 100
+              metric tons as well as 20 tons of jewellery on an annual basis,
+              Forecast Logistics is positioned to be a first class contender in
+              the mining industry.
             </p>
           </div>
           <div class="pt-20">

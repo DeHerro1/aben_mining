@@ -14,25 +14,22 @@
         active-text-color="#ff6a3e"
         @select="handleSelect"
       >
-        <el-menu-item index="1" @click="$router.push('/deposit_vault')">
-          <i class="el-icon-shopping-cart-full"></i>
-          Deposit Status</el-menu-item
-        >
-        <el-menu-item
-          index="2"
-          @click="$router.push('/deposit_vault/customer_information')"
-        >
-          <i class="el-icon-user-solid mr-5"></i>
-          Customer information</el-menu-item
-        >
-        <el-menu-item
-          index="4"
-          @click="$router.push('/deposit_vault/manage_password')"
+        <el-menu-item index="1" @click="$router.push('/depositors')">
+          <i class="el-icon-goods mr-5"></i>
+          Depositors
+        </el-menu-item>
+        <!-- <el-menu-item index="2" @click="$router.push('/depositors/users')">
+          <i class="el-icon-goods mr-5"></i>
+          Users
+        </el-menu-item> -->
+        <!-- <el-menu-item
+          index="3"
+          @click="$router.push('/depositors/manage_password')"
         >
           <i class="el-icon-goods mr-5"></i>
           Manage Password
-        </el-menu-item>
-        <el-menu-item index="5" @click="open">
+        </el-menu-item> -->
+        <el-menu-item index="4" @click="open">
           <i class="el-icon-coin mr-5"></i> Logout
         </el-menu-item>
       </el-menu>
@@ -44,7 +41,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'SideBar',
+  name: 'AdminSideBar',
   data() {
     return {
       user: null,
@@ -64,7 +61,7 @@ export default Vue.extend({
         type: 'warning',
       })
         .then(() => {
-          localStorage.removeItem('5%5od4po43')
+          localStorage.removeItem('5%5od4pogift')
           this.$router.replace('/')
         })
         .catch(() => {})
@@ -91,6 +88,9 @@ $laptop_screen: 1024px;
   height: 90vh;
 
   position: fixed;
+  @media (max-width: $laptop_screen) {
+    width: 200px !important;
+  }
   @media (max-width: $medium_screen) {
     width: 200px !important;
   }

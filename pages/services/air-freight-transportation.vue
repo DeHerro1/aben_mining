@@ -11,12 +11,12 @@
           <div class="pr-20">
             <h3 class="pb-10">How It Works?</h3>
             <p class="pb-10">
-              At Aben Mining, we can meet all your global transportation needs
-              by our best Air Freight Services. Whether you’re shipping medical
-              supplies to Haiti, or Precious metals to Europe or Handicrafts
-              supplies to Australia, or general goods to any part of the globe
-              etc. you can count on us to get your freight where it’s going or
-              coming from on time.
+              At Access Group Security, we can meet all your global
+              transportation needs by our best Air Freight Services. Whether
+              you’re shipping medical supplies to Haiti, or Precious metals to
+              Europe or Handicrafts supplies to Australia, or general goods to
+              any part of the globe etc. you can count on us to get your freight
+              where it’s going or coming from on time.
             </p>
             <p class="pb-10">
               When your time-definite or hazardous goods demand extra care, we
@@ -46,7 +46,7 @@
           </div>
         </div>
         <div class="pt-20">
-          <h3 class="pb-10">Aben Air Freight Direct</h3>
+          <h3 class="pb-10">Access Group Air Freight Direct</h3>
           <p>
             Combine speed, flexibility, and value with our global
             airport-to-airport service available worldwide
@@ -71,7 +71,7 @@
           </div>
         </div>
         <div class="pt-20">
-          <h3 class="pb-10">Aben® Air Freight Premium Direct</h3>
+          <h3 class="pb-10">Access® Air Freight Premium Direct</h3>
           <p>
             Day-specific scheduling, door-to-door service, with delivery within
             one to three days available in more than 50 countries and

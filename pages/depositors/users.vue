@@ -1,6 +1,54 @@
 <template>
   <div class="deposit_table">
-    <h3>Depositors</h3>
+    <el-dialog
+      title="Create User"
+      :visible.sync="dialogVisible"
+      width="30%"
+      :before-close="handleClose"
+    >
+      <div>
+        <!-- <h3 class="center py-20" style="font-size: 30px">Login</h3> -->
+        <div>
+          <div class="pb-20">
+            <label for="security_code">Name</label>
+            <el-input
+              id="security_code"
+              v-model="form.name"
+              class="mt-5"
+            ></el-input>
+          </div>
+          <div class="pb-20">
+            <label for="security_code">Security Code</label>
+            <el-input
+              id="security_code"
+              v-model="form.passcode"
+              class="mt-5"
+            ></el-input>
+          </div>
+          <div class="pt-10 pb-20">
+            <label for="transaction_code">Transaction Code</label>
+            <el-input
+              id="transaction_code"
+              v-model="form.transaction_code"
+              class="mt-5"
+            ></el-input>
+          </div>
+        </div>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">Cancel</el-button>
+        <el-button type="primary" :loading="loading" @click="registerUser"
+          >Create User</el-button
+        >
+      </span>
+    </el-dialog>
+    <div class="d-flex justify_between">
+      <h3>Users</h3>
+      <el-button type="primary" @click="dialogVisible = true"
+        >Create User</el-button
+      >
+    </div>
+
     <el-card class="mt-20">
       <el-card class="mt-20" style="min-height: 400px">
         <el-table
@@ -127,19 +175,28 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'DepositorsPage',
-  layout: 'dashboard',
+  layout: 'adminDash',
   data() {
     return {
       loading: false,
       tableLoading: false,
       search: '' as string,
       depositors: [],
+      dialogVisible: false,
+      form: {
+        passcode: '' as string,
+        transaction_code: '' as string,
+      },
     }
   },
   created() {
+    localStorage.getItem('5%5od4pogift')
     this.getDepositors()
   },
   methods: {
+    handleClose() {
+      this.dialogVisible = false
+    },
     getDepositorDetails(id: string) {
       //   this.$router.push(`deposit_vault/depositor/${id}`)
       this.$router.push({
@@ -148,6 +205,26 @@ export default Vue.extend({
           id,
         },
       })
+    },
+    open2(message: string, messageType: any) {
+      this.$message({
+        message,
+        type: messageType,
+      })
+    },
+    async registerUser() {
+      this.loading = true
+      try {
+        const loginRes = await this.$axios.post(`/users`, this.form)
+        console.log('user', loginRes)
+        this.open2('User created successful!', 'success')
+        this.loading = false
+        this.dialogVisible = false
+      } catch (error) {
+        console.log(error)
+        this.open2('All user credentials are required!', 'error')
+        this.loading = false
+      }
     },
     async getDepositors() {
       this.loading = true

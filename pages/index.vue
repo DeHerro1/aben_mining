@@ -191,12 +191,14 @@ export default Vue.extend({
           icon: 'el-icon-message',
         },
         {
-          main_text: 'Albemarle Ave, Rocky Mount, NC 27801, USA',
+          main_text:
+            '800 W 1st St Suite 401, Los Angeles, CA 90012, United States',
           title: 'Main Office',
           icon: 'el-icon-location',
         },
         {
-          main_text: '23 Leinster Square, Bayswater, London W2 4NE, UK',
+          main_text:
+            'Level 1, Devonshire House One Mayfair Place London UK W1J 8AJ',
           title: 'UK Branch',
           icon: 'el-icon-place',
         },
