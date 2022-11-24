@@ -25,13 +25,13 @@
           <i class="el-icon-user-solid mr-5"></i>
           Customer information</el-menu-item
         >
-        <el-menu-item
+        <!-- <el-menu-item
           index="4"
           @click="$router.push('/deposit_vault/manage_password')"
         >
           <i class="el-icon-goods mr-5"></i>
           Manage Password
-        </el-menu-item>
+        </el-menu-item> -->
         <el-menu-item index="5" @click="open">
           <i class="el-icon-coin mr-5"></i> Logout
         </el-menu-item>

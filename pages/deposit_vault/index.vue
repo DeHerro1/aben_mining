@@ -15,7 +15,8 @@
         <p><b>Deposit Code: </b> *****</p>
         <p>
           <b>Deposit Date:</b>
-          {{ $moment(depositor.createdAt).format('DD MMM, YY') }}
+          {{ depositor.deposit_date }}
+          <!-- {{ $moment(depositor.createdAt).format('DD MMM, YY') }} -->
         </p>
       </div>
       <div class="vault_deposit_status">

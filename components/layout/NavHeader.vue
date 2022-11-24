@@ -75,6 +75,12 @@
           @click="$router.push('/tracking')"
           >Track Shipment</el-menu-item
         >
+        <el-menu-item
+          index="7"
+          class="side_nav_item"
+          @click="$router.push('/deposit-form')"
+          >Deposit</el-menu-item
+        >
       </el-menu>
     </el-drawer>
     <div class="section d-flex justify_between">
@@ -152,7 +158,11 @@
             >Track Shipment</NuxtLink
           ></el-menu-item
         >
+        <el-menu-item index="7"
+          ><NuxtLink to="/deposit-form">Deposit</NuxtLink></el-menu-item
+        >
       </el-menu>
+
       <div class="mobile_nav hidden-md-and-up" @click="drawer = true">
         <div></div>
         <div></div>

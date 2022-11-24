@@ -5,7 +5,10 @@
       <h4>Depositor's Details</h4>
       <div class="vault_content_header">
         <p><b>Deposit Code: </b> *****</p>
-        <p><b>Deposit Date:</b> 04 May 2022</p>
+        <p>
+          <b>Deposit Created:</b>
+          {{ $moment(depositor.createdAt).format('DD MMM, YY') }}
+        </p>
       </div>
       <div class="vault_deposit_status">
         <section class="deposit_text">
@@ -17,7 +20,7 @@
         <section>
           <p>Date Deposited:</p>
           <p v-if="depositor">
-            {{ $moment(depositor.createdAt).format('DD MMM, YY') }}
+            {{ depositor.deposit_date }}
           </p>
         </section>
         <section class="deposit_text">
