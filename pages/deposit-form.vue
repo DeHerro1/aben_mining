@@ -70,16 +70,25 @@
                       <el-input
                         v-model="registerForm.day"
                         class="dob_input"
+                        type="number"
+                        :max="2"
                         placeholder="Day"
                       >
                       </el-input>
                       <el-input
                         v-model="registerForm.month"
                         class="dob_input"
+                        type="number"
+                        :maxlength="2"
                         placeholder="Month"
                       >
                       </el-input>
-                      <el-input v-model="registerForm.year" placeholder="Year">
+                      <el-input
+                        v-model="registerForm.year"
+                        type="number"
+                        :maxlength="4"
+                        placeholder="Year"
+                      >
                       </el-input>
                     </div>
                   </el-form-item>

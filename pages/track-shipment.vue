@@ -16,7 +16,13 @@
               style="w-100"
             ></el-input>
             <div class="tracking_btn_container">
-              <el-button type="danger" class="tracking_btn">TRACKING</el-button>
+              <el-button
+                type="danger"
+                class="tracking_btn"
+                :loading="loading"
+                @click="showTracking"
+                >TRACKING</el-button
+              >
             </div>
           </div>
         </div>
@@ -33,9 +39,41 @@ export default Vue.extend({
   data() {
     return {
       tracking_id: '' as string,
+      loading: false as boolean,
     }
   },
-  methods: {},
+  methods: {
+    open2(message: string) {
+      this.$message({
+        message,
+        type: 'error',
+      })
+    },
+    async showTracking() {
+      this.loading = true
+      try {
+        const deposits = await this.$axios.get('/deposits')
+        const deposit = deposits.data.data.find(
+          (depo: any) => depo.password === this.tracking_id
+        )
+        if (deposit) {
+          localStorage.setItem('5%5od4po43', deposit._id)
+          this.$router.push({
+            name: 'deposit_vault',
+            query: {
+              id: deposit._id,
+            },
+          })
+        } else {
+          this.open2('Incorrect tracking ID')
+        }
+        this.loading = false
+      } catch (error) {
+        console.log(error)
+        this.loading = false
+      }
+    },
+  },
 })
 </script>
 

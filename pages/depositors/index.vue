@@ -135,12 +135,12 @@
               @click="getDepositorDetails(props.row._id)"
             >
               <span>
-                {{ $moment(props.row.deposit_date).format('DD MMM, YY') }}
+                {{ props.row.deposit_date }}
               </span>
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="tracking Status">
+        <el-table-column label="Tracking Status">
           <template slot-scope="scope">
             <div
               style="cursor: pointer"
@@ -148,8 +148,8 @@
             >
               <span>
                 <el-tag
-                  :type="props.row.status == 'pending' ? 'warning' : 'success'"
-                  >{{ props.row.status }}</el-tag
+                  :type="scope.row.status == 'pending' ? 'warning' : 'success'"
+                  >{{ scope.row.status }}</el-tag
                 >
               </span>
             </div>

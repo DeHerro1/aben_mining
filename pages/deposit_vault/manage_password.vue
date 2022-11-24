@@ -43,7 +43,7 @@ export default Vue.extend({
         const id = localStorage.getItem('5%5od4po43')
         // const deposits = await this.$axios.get('/deposits')
         // const deposit = deposits.data.data.find((depo: any) => depo._id === id)
-        const depositRes = await this.$axios.patch(`/deposits/${id}`, this.pass)
+        const depositRes = await this.$axios.put(`/deposits/${id}`, this.pass)
         console.log(depositRes)
       } catch (error) {
         console.log(error)

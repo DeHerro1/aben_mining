@@ -38,7 +38,10 @@
       <section class="">
         <p>Date of birth</p>
         <p class="pt-10">
-          <b>{{ $moment(depositor.dob).format('DD MMM, YY') }} </b>
+          <b>
+            {{ depositor.dob }}
+            <!-- {{ $moment(depositor.dob).format('DD MMM, YY') }} -->
+          </b>
         </p>
       </section>
       <section class="">
@@ -53,24 +56,17 @@
       <section class="">
         <p>Created Date</p>
         <p class="pt-10">
-          <!-- <b>
-                {{
-                  listing && $moment(listing.created_at).format('MMM DD, YY')
-                }}
-              </b> -->
-          <b> {{ depositor.createdAt }} </b>
+          <b>
+            <!-- {{ depositor.createdAt }}  -->
+
+            {{ $moment(depositor.createdAt).format('DD MMM, YY') }}
+          </b>
         </p>
       </section>
     </div>
     <el-divider></el-divider>
     <section class="pt-30">
       <h4 class="pb-20">Item Details</h4>
-      <!-- <el-input
-        v-if="listing.listing_detail"
-        v-model="listing.listing_detail.description"
-        type="textarea"
-        :rows="2"
-      /> -->
       <div class="d-flex justify_around">
         <section class="">
           <p class="pr-20">Item Type</p>
@@ -98,12 +94,23 @@
         </section>
       </div>
     </section>
-    <section class="pt-30" style="width: 85%; margin: 0 auto">
+    <section class="pt-30 d-flex justify_around" style="width: 80%">
       <section>
         <p>Item Description</p>
         <p class="pt-10">
           <b> {{ depositor.item_description }} </b>
         </p>
+      </section>
+      <section class="">
+        <p>Tracking Status</p>
+        <el-select
+          class="mt-10"
+          v-model="depositor.status"
+          placeholder="Select"
+        >
+          <el-option label="Pending" value="pending"> </el-option>
+          <el-option label="Delivered" value="delivered"> </el-option>
+        </el-select>
       </section>
     </section>
     <el-divider></el-divider>
@@ -150,20 +157,12 @@ export default Vue.extend({
   layout: 'adminDash',
   data() {
     return {
-      activeName: 'first' as string,
-      imageErr: '' as string,
-      image: '' as any,
       approvalLoader: false,
       deleteLoading: false,
-      listing_id: this.$route.params.id,
-      newOtherSpec: {
-        name: '',
-        number: 0,
-      } as any,
-      listing: {} as any,
+
       loading: false as boolean,
       depositorID: this.$route.query.id,
-      depositor: {},
+      depositor: {} as any,
     }
   },
   created() {
@@ -179,6 +178,12 @@ export default Vue.extend({
       )
       console.log(this.depositor)
     },
+    open2(message: string, type: any) {
+      this.$message({
+        message,
+        type,
+      })
+    },
     open(id: string) {
       // const h = this.$createElement
       this.$confirm('Are you sure you want to delete?', {
@@ -193,15 +198,27 @@ export default Vue.extend({
         })
     },
     async updateDeposit() {
-      // const deposits = await this.$axios.update('/deposits', )
+      try {
+        const deposits = await this.$axios.put(
+          `/deposits/${this.depositor._id}`,
+          this.depositor
+        )
+        this.open2('Depositor updated successful!', 'success')
+        console.log(deposits)
+      } catch (error) {
+        this.open2('There is an error!', 'error')
+        console.error(error)
+      }
     },
 
     async deleteDepositor(id: string) {
       this.deleteLoading = true
       console.log(id)
       try {
-        const ListingResponse = await this.$axios.delete('/deposits')
-
+        const ListingResponse = await this.$axios.delete(
+          `/deposits/${this.depositor._id}`
+        )
+        this.open2('Depositor updated successful!', 'success')
         console.log(ListingResponse)
 
         this.deleteLoading = false
@@ -210,7 +227,7 @@ export default Vue.extend({
         this.$router.replace('/deposit_vault/depositors')
       } catch (error) {
         this.deleteLoading = false
-        console.log(error, 'error')
+        console.error(error, 'error')
       }
     },
   },
