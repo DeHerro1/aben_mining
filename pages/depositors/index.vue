@@ -140,15 +140,17 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="Location">
+        <el-table-column label="tracking Status">
           <template slot-scope="scope">
             <div
               style="cursor: pointer"
               @click="getDepositorDetails(scope.row._id)"
             >
               <span>
-                {{ scope.row.city }}, {{ scope.row.state }},
-                {{ scope.row.country }}
+                <el-tag
+                  :type="props.row.status == 'pending' ? 'warning' : 'success'"
+                  >{{ props.row.status }}</el-tag
+                >
               </span>
             </div>
           </template>

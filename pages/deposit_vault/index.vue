@@ -41,10 +41,19 @@
           <p>{{ depositor.item_description }}</p>
         </section>
         <section>
+          <p>Tracking Status:</p>
+          <p>
+            <el-tag
+              :type="depositor.status == 'pending' ? 'warning' : 'success'"
+              >{{ depositor.status }}</el-tag
+            >
+          </p>
+        </section>
+        <section class="deposit_text">
           <p>Next of Kin:</p>
           <p>{{ depositor.next_of_kin }}</p>
         </section>
-        <section class="deposit_text">
+        <section>
           <p>Relationship with Kin:</p>
           <p>{{ depositor.relationship }}</p>
         </section>
