@@ -1,5 +1,5 @@
 <template>
-  <div class="vault_content_container" v-loading="loading">
+  <div v-loading="loading" class="vault_content_container">
     <h3>Deposit Summary</h3>
     <el-card class="box-card vault_content">
       <h4>Deposit Status</h4>
@@ -111,6 +111,7 @@ $laptop_screen: 1024px;
     margin-top: 20px;
     padding: 20px;
     padding-bottom: 40px;
+    max-width: 720px;
     .vault_content_header {
       width: 90%;
       margin: 20px auto;
