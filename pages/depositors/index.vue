@@ -42,11 +42,14 @@
         >
       </span>
     </el-dialog>
-    <div class="d-flex justify_between">
-      <h3>Depositors</h3>
-      <!-- <el-button type="primary" @click="dialogVisible = true"
-        >Create User</el-button
-      > -->
+    <div class="depositors_header">
+      <h3 class="depositors_header_text">Depositors</h3>
+      <el-button
+        type="primary"
+        class="header_btn"
+        @click="$router.push('/depositors/deposit-form')"
+        ><i class="el-icon-plus mr-5"></i> New Deposit Form</el-button
+      >
     </div>
 
     <!-- <el-card class="mt-20"> -->
@@ -251,10 +254,32 @@ $laptop_screen: 1024px;
 .deposit_table {
   //   min-height: 600px;
   padding-top: 20px;
-  height: 500px;
+  height: 100vh;
   margin: 20px 20px 0 310px;
   @media (max-width: $laptop_screen) {
     margin-left: 210px;
+  }
+  @media (max-width: $small_screen) {
+    margin-left: 10px;
+  }
+}
+.depositors_header {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: $small_screen) {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .depositors_header_text {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  .header_btn {
+    align-self: flex-end;
+    width: 200px;
+    @media (max-width: $small_screen) {
+      width: 180px;
+    }
   }
 }
 </style>
