@@ -119,11 +119,11 @@ $laptop_screen: 1024px;
   }
   .vault_content {
     margin-top: 20px;
+    margin-bottom: 40px;
     padding: 20px;
     width: 100%;
     max-width: 750px;
     padding-bottom: 40px;
-    max-width: 720px;
     .vault_content_header {
       width: 90%;
       margin: 20px auto;
@@ -131,7 +131,7 @@ $laptop_screen: 1024px;
       justify-content: space-between;
     }
     .vault_deposit_status {
-      width: 100%;
+      width: 90%;
       margin: 0 auto;
 
       @media (max-width: $small_screen) {

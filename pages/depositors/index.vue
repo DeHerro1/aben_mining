@@ -53,7 +53,7 @@
     </div>
 
     <!-- <el-card class="mt-20"> -->
-    <el-card class="mt-20" style="min-height: 400px">
+    <el-card class="mt-20 depo_table" style="min-height: 400px">
       <el-table
         v-loading="depositors.length < 1"
         :data="depositors"
@@ -281,5 +281,7 @@ $laptop_screen: 1024px;
       width: 180px;
     }
   }
+}
+.depo_table {
 }
 </style>

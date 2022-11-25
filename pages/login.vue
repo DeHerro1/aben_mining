@@ -22,7 +22,7 @@
         <div class="pb-20">
           <el-checkbox v-model="checked">Remember Me</el-checkbox>
         </div>
-        <div class="px-20">
+        <div class="px-20" style="width: 50%; margin: 0 auto">
           <el-button
             type="primary"
             style="width: 100%"
@@ -95,13 +95,13 @@ $medium_screen: 769px;
 $laptop_screen: 1024px;
 .login_main_container {
   width: 100%;
-  min-height: 700px;
+  min-height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
   .login_container {
     padding: 20px;
-    width: 30%;
+    width: 60%;
     box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
       0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
     @media (max-width: $small_screen) {

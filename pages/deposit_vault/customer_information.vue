@@ -118,9 +118,13 @@ $laptop_screen: 1024px;
 
 .vault_content_container {
   padding-top: 20px;
-  min-height: 700px;
+  height: 100vh;
   overflow-y: scroll;
-  margin: 20px 20px 40px 310px;
+  margin: 20px 20px 50px 310px;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
   @media (max-width: $laptop_screen) {
     margin-left: 210px;
   }
@@ -131,8 +135,8 @@ $laptop_screen: 1024px;
     margin-top: 20px;
     margin-bottom: 40px;
     padding: 20px;
-    // overflow-y: scroll;
-    // height: 700px;
+    width: 100%;
+    max-width: 750px;
     padding-bottom: 40px;
 
     .vault_content_header {
@@ -142,7 +146,7 @@ $laptop_screen: 1024px;
       justify-content: space-between;
     }
     .vault_deposit_status {
-      width: 80%;
+      width: 90%;
       margin: 0 auto;
       @media (max-width: $small_screen) {
         width: 100%;
