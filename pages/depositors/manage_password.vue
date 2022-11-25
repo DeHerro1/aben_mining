@@ -40,8 +40,7 @@ export default Vue.extend({
       const id = localStorage.getItem('5%5od4pogift')
       const users = await this.$axios.get(`/users`)
 
-      const admin = users.data.data.find((user) => user._id === id)
-      console.log('user', admin)
+      const admin = users.data.data.find((user: any) => user._id === id)
       this.admin = admin
     } catch (error) {}
   },

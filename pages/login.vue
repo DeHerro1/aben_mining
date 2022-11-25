@@ -31,11 +31,11 @@
             >Login</el-button
           >
         </div>
-        <div class="pt-20 pl-10">
+        <!-- <div class="pt-20 pl-10">
           <p style="color: #de0b0b; cursor: pointer">
             Forgotten Transaction Code ?
           </p>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -101,7 +101,7 @@ $laptop_screen: 1024px;
   align-items: center;
   .login_container {
     padding: 20px;
-    width: 40%;
+    width: 30%;
     box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
       0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
     @media (max-width: $small_screen) {
