@@ -235,13 +235,13 @@ export default Vue.extend({
         const ListingResponse = await this.$axios.delete(
           `/deposits/${this.depositor._id}`
         )
-        this.open2('Depositor updated successful!', 'success')
+        this.open2('Depositor deleed successful!', 'success')
         console.log(ListingResponse)
 
         this.deleteLoading = false
         this.fetchData()
         //  this.
-        this.$router.replace('/deposit_vault/depositors')
+        this.$router.replace('/depositors')
       } catch (error) {
         this.deleteLoading = false
         console.error(error, 'error')
@@ -302,7 +302,7 @@ $laptop_screen: 1024px;
   }
 }
 .backArrow {
-   @media (max-width: $small_screen) {
+  @media (max-width: $small_screen) {
     margin-top: 20px;
   }
 }

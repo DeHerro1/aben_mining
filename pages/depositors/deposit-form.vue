@@ -163,7 +163,7 @@
                 <el-form-item label="Item Value">
                   <el-input
                     v-model="registerForm.item_value"
-                    placeholder="Purpose"
+                    placeholder="item value"
                   >
                   </el-input>
                 </el-form-item>
@@ -362,7 +362,7 @@ export default Vue.extend({
         const depositFormResponse = await this.$axios.post('/deposits', data)
         this.loading = false
         this.open2('Deposit form submitted!')
-        this.$router.replace('/')
+        this.$router.replace('/depositors')
         console.log(depositFormResponse)
       } catch (error) {
         console.log(error)

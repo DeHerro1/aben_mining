@@ -101,9 +101,16 @@ $laptop_screen: 1024px;
   align-items: center;
   .login_container {
     padding: 20px;
-    width: 60%;
+    width: 40%;
+    height: 400px;
     box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
       0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    @media (max-width: $laptop_screen) {
+      width: 50%;
+    }
+    @media (max-width: $medium_screen) {
+      width: 50%;
+    }
     @media (max-width: $small_screen) {
       width: 100%;
       box-shadow: none;
