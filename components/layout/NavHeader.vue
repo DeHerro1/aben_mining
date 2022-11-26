@@ -64,22 +64,10 @@
           >Contact Us</el-menu-item
         >
         <el-menu-item
-          index="5"
-          class="side_nav_item"
-          @click="$router.push('/login')"
-          >Login</el-menu-item
-        >
-        <el-menu-item
           index="6"
           class="side_nav_item"
           @click="$router.push('/tracking')"
           >Track Shipment</el-menu-item
-        >
-        <el-menu-item
-          index="7"
-          class="side_nav_item"
-          @click="$router.push('/deposit-form')"
-          >Deposit</el-menu-item
         >
       </el-menu>
     </el-drawer>
@@ -150,16 +138,11 @@
         <el-menu-item index="4">
           <NuxtLink to="/contactUs">Contact Us</NuxtLink></el-menu-item
         >
-        <el-menu-item index="5"
-          ><NuxtLink to="/login">Login</NuxtLink></el-menu-item
-        >
+
         <el-menu-item index="6"
           ><NuxtLink to="/track-shipment"
             >Track Shipment</NuxtLink
           ></el-menu-item
-        >
-        <el-menu-item index="7"
-          ><NuxtLink to="/deposit-form">Deposit</NuxtLink></el-menu-item
         >
       </el-menu>
 

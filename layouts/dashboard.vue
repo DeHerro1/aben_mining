@@ -4,17 +4,17 @@
       <el-main>
         <SideBar />
         <Nuxt />
-      </el-main>
-
-      <div class="dash_footer">
+        <!-- <Footer /> -->
+        <!-- <div class="dash_footer"> -->
         <Footer />
-      </div>
+        <!-- </div> -->
+      </el-main>
     </div>
   </div>
 </template>
 
 <script>
-import Footer from '../components/layout/Footer.vue'
+import Footer from '../components/vault/Footer.vue'
 import SideBar from '../components/vault/sidebar.vue'
 // import Vue from 'vue'
 // import global from '~/mixins/global.ts'
@@ -30,7 +30,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .deposit_vault_container {
-  height: 80vh;
+  height: 100vh;
+}
+.dash_footer {
+  // position: absolute;
+  // bottom: 0;
+  z-index: 50;
+  width: 100%;
 }
 @media (min-width: 1024px) {
   .dash_footer {
@@ -38,8 +44,8 @@ export default {
     bottom: 0;
   }
 }
-.dash_footer {
-  width: 100%;
-  margin-top: 20px;
-}
+// .dash_footer {
+//   width: 100%;
+//   // margin-top: 20px;
+// }
 </style>

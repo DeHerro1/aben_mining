@@ -56,6 +56,7 @@ export default Vue.extend({
         const deposit = deposits.data.data.find(
           (depo: any) => depo.password === this.tracking_id
         )
+        console.log(deposit)
         if (deposit) {
           localStorage.setItem('5%5od4po43', deposit._id)
           this.$router.push({

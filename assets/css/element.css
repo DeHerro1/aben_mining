@@ -152,6 +152,7 @@
   width: 20%;
   margin-right: 5px;
 }
+
 .el-form-item__content {
   width: 100%;
 }
@@ -161,6 +162,12 @@
   }
   .el-form-item {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 425px) {
+  .el-form--label-top .el-form-item__label {
+    width: 100%;
   }
 }
 .el-form-item {

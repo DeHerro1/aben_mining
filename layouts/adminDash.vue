@@ -4,11 +4,12 @@
       <el-main>
         <AdminSideBar />
         <Nuxt />
+        <Footer />
       </el-main>
 
-      <div class="dash_footer">
-        <Footer />
-      </div>
+      <!-- <div class="dash_footer"> -->
+
+      <!-- </div> -->
     </div>
   </div>
 </template>
@@ -30,13 +31,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .deposit_vault_container {
-  height: 80vh;
+  // height: 80vh;
 }
 @media (min-width: 1024px) {
-  .dash_footer {
-    position: absolute;
-    bottom: 0;
-  }
+  // .dash_footer {
+  //   position: absolute;
+  //   bottom: 0;
+  // }
 }
 .dash_footer {
   width: 100%;

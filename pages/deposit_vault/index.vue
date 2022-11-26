@@ -2,21 +2,21 @@
   <div v-loading="loading" class="vault_content_container">
     <h3>Deposit Summary</h3>
     <el-card class="box-card vault_content">
-      <h4>Deposit Status</h4>
+      <!-- <h4>Deposit Status</h4> -->
       <div class="vault_content_header">
         <p>
           {{ depositor && depositor.firstName }}
           {{ depositor && depositor.lastName }}
         </p>
-        <p><b>Deposit Serial NO:</b>*****v443</p>
+        <!-- <p><b>Deposit Serial NO:</b>*****v443</p> -->
         <p><b>Current Value:</b> {{ depositor && depositor.item_value }}</p>
       </div>
       <div class="vault_content_header">
         <p><b>Deposit Code: </b> *****</p>
         <p>
           <b>Deposit Date:</b>
-          {{ depositor.deposit_date }}
-          <!-- {{ $moment(depositor.createdAt).format('DD MMM, YY') }} -->
+          <!-- {{ depositor.deposit_date }} -->
+          {{ $moment(depositor.deposit_date).format('DD MMM, YY') }}
         </p>
       </div>
       <div class="vault_deposit_status">
@@ -28,6 +28,7 @@
           <p>Date Deposited:</p>
           <p>{{ $moment(depositor.createdAt).format('DD MMM, YY') }}</p>
         </section>
+
         <section class="deposit_text">
           <p>Goods/Item Deposited:</p>
           <p>{{ depositor.item_type }}</p>
@@ -102,16 +103,27 @@ $laptop_screen: 1024px;
 
 .vault_content_container {
   padding-top: 20px;
-  margin: 20px 20px 0 310px;
-  min-height: 500px;
-  @media (max-width: $medium_screen) {
+  margin: 20px 20px 50px 310px;
+  // min-height: 600px;
+  height: 100vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  @media (max-width: $laptop_screen) {
     margin-left: 210px;
+  }
+  @media (max-width: $small_screen) {
+    margin-left: 10px;
   }
   .vault_content {
     margin-top: 20px;
+    margin-bottom: 40px;
     padding: 20px;
+    width: 100%;
+    max-width: 750px;
     padding-bottom: 40px;
-    max-width: 720px;
     .vault_content_header {
       width: 90%;
       margin: 20px auto;
@@ -119,9 +131,12 @@ $laptop_screen: 1024px;
       justify-content: space-between;
     }
     .vault_deposit_status {
-      width: 80%;
+      width: 90%;
       margin: 0 auto;
 
+      @media (max-width: $small_screen) {
+        width: 100%;
+      }
       section {
         // margin-bottom: 10px;
         padding: 5px;
@@ -134,6 +149,10 @@ $laptop_screen: 1024px;
           color: #000 !important;
           margin-right: 5px;
           padding: 5px;
+          @media (max-width: $small_screen) {
+            width: 100%;
+            margin-right: 0;
+          }
         }
       }
       .deposit_text {

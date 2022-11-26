@@ -1,150 +1,167 @@
 <template>
   <div class="deposit_details">
-    <div class="d-flex pb-20">
+    <div class="d-flex pb-20 backArrow">
       <NuxtLink to="/depositors"
-        ><span class="backDirection"><i class="el-icon-back"></i> </span
+        ><span class="backDirection ml-10"><i class="el-icon-back"></i> </span
       ></NuxtLink>
-      <h4 class="pt-5 pl-20">Depositor Details</h4>
+      <h3 class="pt-5 pl-20">Depositor Details</h3>
     </div>
-    <div class="d-flex justify_around pt-20">
-      <section class="listing_bar">
-        <p>Depositor name</p>
-        <p class="pt-10">
-          <b>{{ depositor.firstName }} {{ depositor.lastName }} </b>
-        </p>
-      </section>
-      <section class="listing_bar">
-        <p>Depositor Email</p>
-        <!-- <el-input
-            v-if="listing.listing_detail"
-            v-model="listing.listing_detail.price"
-          /> -->
-        <p class="pt-10">
-          <b>{{ depositor.email }} </b>
-        </p>
-      </section>
-      <section class="listing_bar">
-        <p>Depositor Phone number</p>
-        <!-- <el-input
-            v-if="listing.listing_detail"
-            v-model="listing.listing_detail.price"
-          /> -->
-        <p class="pt-10">
-          <b>{{ depositor.phone }} </b>
-        </p>
-      </section>
-    </div>
-    <div class="d-flex justify_around pt-30">
-      <section class="">
-        <p>Date of birth</p>
-        <p class="pt-10">
-          <b>
-            {{ depositor.dob }}
-            <!-- {{ $moment(depositor.dob).format('DD MMM, YY') }} -->
-          </b>
-        </p>
-      </section>
-      <section class="">
-        <p>Location</p>
-        <p class="pt-10">
-          <b
-            >{{ depositor.city }} {{ depositor.state }},
-            {{ depositor.country }}
-          </b>
-        </p>
-      </section>
-      <section class="">
-        <p>Created Date</p>
-        <p class="pt-10">
-          <b>
-            <!-- {{ depositor.createdAt }}  -->
-
-            {{ $moment(depositor.createdAt).format('DD MMM, YY') }}
-          </b>
-        </p>
-      </section>
-    </div>
-    <el-divider></el-divider>
-    <section class="pt-30">
-      <h4 class="pb-20">Item Details</h4>
-      <div class="d-flex justify_around">
-        <section class="">
-          <p class="pr-20">Item Type</p>
-          <p class="">
-            <b>{{ depositor.item_type }} </b>
-          </p>
+    <div class="depo_details">
+      <div class="pt-20">
+        <section class="listing_bar">
+          <p>Depositor name</p>
+          <div class="pt-10 d-flex">
+            <el-input
+              v-model="depositor.firstName"
+              placeholder="First name"
+              class="mr-10"
+            ></el-input>
+            <el-input
+              v-model="depositor.lastName"
+              placeholder="Last name"
+            ></el-input>
+          </div>
         </section>
-        <section class="">
-          <p>Item Value</p>
-          <p class="pt-10">
-            <b>{{ depositor.item_value }} </b>
-          </p>
+        <section class="pt-20">
+          <p>Depositor Email</p>
+          <el-input v-if="depositor" v-model="depositor.email" class="pt-10" />
         </section>
-        <section class="">
-          <p>Deposit Date</p>
-          <p class="pt-10">
-            <b>{{ depositor.deposit_date }} </b>
-          </p>
-        </section>
-        <section class="">
-          <p>Item Quantity</p>
-          <p class="pt-10">
-            <b>{{ depositor.quantity }} </b>
-          </p>
+        <section class="pt-20">
+          <p>Depositor Phone number</p>
+          <el-input v-if="depositor" v-model="depositor.phone" class="pt-10" />
         </section>
       </div>
-    </section>
-    <section class="pt-30 d-flex justify_around" style="width: 80%">
-      <section>
-        <p>Item Description</p>
-        <p class="pt-10">
-          <b> {{ depositor.item_description }} </b>
-        </p>
+      <div class="pt-30">
+        <section class="">
+          <p>Date of birth</p>
+          <div class="d-flex pt-10">
+            <p class="pt-20 pr-10">
+              <b>{{ depositor.dob }} </b>
+            </p>
+            <el-date-picker
+              v-model="depositor.dob"
+              type="date"
+              class="pt-10"
+              placeholder="Pick a day"
+            >
+            </el-date-picker>
+          </div>
+        </section>
+        <section class="pt-20">
+          <p>Country</p>
+          <el-input
+            v-if="depositor"
+            v-model="depositor.country"
+            class="pt-10"
+          />
+        </section>
+        <section class="pt-20">
+          <p>City</p>
+          <el-input v-if="depositor" v-model="depositor.city" class="pt-10" />
+        </section>
+        <section class="pt-20">
+          <p>State</p>
+          <el-input v-if="depositor" v-model="depositor.state" class="pt-10" />
+        </section>
+      </div>
+      <!-- <el-divider></el-divider> -->
+      <section class="pt-30">
+        <!-- <h4 class="pb-20">Item Details</h4> -->
+        <div class="">
+          <section class="pt-20">
+            <p class="pr-20">Item Type</p>
+            <el-input
+              v-if="depositor"
+              v-model="depositor.item_type"
+              class="pt-10"
+            />
+          </section>
+          <section class="">
+            <p>Item Value</p>
+            <el-input
+              v-if="depositor"
+              v-model="depositor.item_value"
+              class="pt-10"
+            />
+          </section>
+          <section class="">
+            <p>Deposit Date</p>
+            <el-date-picker
+              v-model="depositor.deposit_date"
+              type="date"
+              class="pt-10"
+              placeholder="Pick a day"
+            >
+            </el-date-picker>
+          </section>
+          <section class="">
+            <p>Item Quantity</p>
+            <el-input
+              v-if="depositor"
+              v-model="depositor.quantity"
+              class="pt-10"
+            />
+          </section>
+        </div>
       </section>
-      <section class="">
-        <p>Tracking Status</p>
-        <el-select
-          class="mt-10"
-          v-model="depositor.status"
-          placeholder="Select"
+      <section class="pt-30">
+        <section>
+          <p>Item Description</p>
+          <el-input
+            v-if="depositor"
+            v-model="depositor.item_description"
+            class="pt-10"
+          />
+        </section>
+        <section class="pt-20">
+          <p>Tracking Status</p>
+          <el-select
+            class="mt-10"
+            v-model="depositor.status"
+            placeholder="Select"
+          >
+            <el-option label="Pending" value="pending"> </el-option>
+            <el-option label="Delivered" value="delivered"> </el-option>
+          </el-select>
+        </section>
+      </section>
+      <section class="pt-30 mb-20">
+        <!-- <h4 class="pb-20">Next of Kin</h4> -->
+        <div class="">
+          <section class="">
+            <p class="pr-20">Kin Name</p>
+            <el-input
+              v-if="depositor"
+              v-model="depositor.next_of_kin"
+              class="pt-10"
+              style="width: 100%"
+            />
+          </section>
+          <section class="pt-20">
+            <p class="pr-20">Relationship with Kin</p>
+            <el-input
+              v-if="depositor"
+              v-model="depositor.relationship"
+              class="pt-10"
+              style="width: 100%"
+            />
+          </section>
+        </div>
+      </section>
+      <div class="details_btns pt-30">
+        <el-button
+          type="secondary"
+          :loading="deleteLoading"
+          class="deletebtn"
+          style="color: red"
+          @click="open(depositor._id)"
         >
-          <el-option label="Pending" value="pending"> </el-option>
-          <el-option label="Delivered" value="delivered"> </el-option>
-        </el-select>
-      </section>
-    </section>
-    <el-divider></el-divider>
-    <section class="pt-30 mb-20">
-      <h4 class="pb-20">Next of Kin</h4>
-      <div class="d-flex justify_around" style="width: 50%">
-        <section class="">
-          <p class="pr-20">Kin Name</p>
-          <p class="">
-            <b>{{ depositor.next_of_kin }} </b>
-          </p>
-        </section>
-        <section class="">
-          <p class="pr-20">Relationship with Kin</p>
-          <p class="">
-            <b>{{ depositor.relationship }} </b>
-          </p>
-        </section>
+          <i class="el-icon-close pr-10"></i>Delete Depositor</el-button
+        >
+        <el-button type="primary" class="submitbtn" @click="updateDeposit">
+          <i class="el-icon-check pr-10"></i>Save Changes</el-button
+        >
       </div>
-    </section>
-
-    <div class="d-flex justify_end pt-30 mr-20">
-      <el-button
-        type="secondary"
-        :loading="deleteLoading"
-        class="mr-10"
-        style="color: red"
-        @click="open(depositor._id)"
-      >
-        <i class="el-icon-close pr-10"></i>Delete Depositor</el-button
-      >
-      <el-button type="primary" class="mr-10" @click="updateDeposit">
-        <i class="el-icon-check pr-10"></i>Save Changes</el-button
-      >
     </div>
   </div>
 </template>
@@ -218,13 +235,13 @@ export default Vue.extend({
         const ListingResponse = await this.$axios.delete(
           `/deposits/${this.depositor._id}`
         )
-        this.open2('Depositor updated successful!', 'success')
+        this.open2('Depositor deleed successful!', 'success')
         console.log(ListingResponse)
 
         this.deleteLoading = false
         this.fetchData()
         //  this.
-        this.$router.replace('/deposit_vault/depositors')
+        this.$router.replace('/depositors')
       } catch (error) {
         this.deleteLoading = false
         console.error(error, 'error')
@@ -237,15 +254,57 @@ export default Vue.extend({
 <style lang="scss" scoped>
 $small_screen: 426px;
 $medium_screen: 769px;
+$laptop_screen: 1024px;
 .btn_small {
   padding: 5px !important;
 }
 .deposit_details {
   padding-top: 20px;
-  height: 700px;
+  height: 800px;
   overflow-y: scroll;
   padding-bottom: 50px;
   margin: 20px 20px 0 310px;
+  @media (max-width: $laptop_screen) {
+    margin-left: 210px;
+  }
+  @media (max-width: $small_screen) {
+    margin-left: 0;
+  }
+  .depo_details {
+    width: 60%;
+    margin: 0 auto;
+    @media (max-width: $medium_screen) {
+      width: 80%;
+    }
+  }
+  .details_btns {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    .deletebtn {
+      margin-right: 10px;
+      @media (max-width: $small_screen) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+    .submitbtn {
+      margin-left: 0;
+    }
+    @media (max-width: $medium_screen) {
+      margin-right: 0;
+    }
+    @media (max-width: $small_screen) {
+      flex-direction: column;
+
+      width: 100%;
+    }
+  }
+}
+.backArrow {
+  @media (max-width: $small_screen) {
+    margin-top: 20px;
+  }
 }
 .backDirection {
   color: black;
