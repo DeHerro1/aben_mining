@@ -66,7 +66,7 @@
         <el-menu-item
           index="6"
           class="side_nav_item"
-          @click="$router.push('/tracking')"
+          @click="$router.push('/track-shipment')"
           >Track Shipment</el-menu-item
         >
       </el-menu>
