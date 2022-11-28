@@ -64,15 +64,9 @@
           >Contact Us</el-menu-item
         >
         <el-menu-item
-          index="5"
-          class="side_nav_item"
-          @click="$router.push('/login')"
-          >Login</el-menu-item
-        >
-        <el-menu-item
           index="6"
           class="side_nav_item"
-          @click="$router.push('/tracking')"
+          @click="$router.push('/track-shipment')"
           >Track Shipment</el-menu-item
         >
       </el-menu>
@@ -144,9 +138,7 @@
         <el-menu-item index="4">
           <NuxtLink to="/contactUs">Contact Us</NuxtLink></el-menu-item
         >
-        <el-menu-item index="5"
-          ><NuxtLink to="/login">Login</NuxtLink></el-menu-item
-        >
+
         <el-menu-item index="6"
           ><NuxtLink to="/track-shipment"
             >Track Shipment</NuxtLink
