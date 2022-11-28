@@ -71,17 +71,13 @@
           <i class="el-icon-user-solid mr-5"></i>
           New Deposit Form
         </el-menu-item>
-        <!-- <el-menu-item index="3" @click="$router.push('/depositors/users')">
-          <i class="el-icon-goods mr-5"></i>
-          Users
-        </el-menu-item> -->
-        <!-- <el-menu-item
+        <el-menu-item
           index="3"
           @click="$router.push('/depositors/manage_password')"
         >
-          <i class="el-icon-goods mr-5"></i>
+          <i class="el-icon-edit mr-5"></i>
           Manage Password
-        </el-menu-item> -->
+        </el-menu-item>
         <el-menu-item index="4" @click="open">
           <i class="el-icon-coin mr-5"></i> Logout
         </el-menu-item>

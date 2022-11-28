@@ -3,16 +3,23 @@
     <h3>Change Password</h3>
     <el-card class="box-card vault_content">
       <div class="password_content">
-        <div class="pt-10">
+        <!-- <div class="pt-10">
           <label for="old_password">Old Password</label>
           <el-input></el-input>
-        </div>
+        </div> -->
         <div class="pt-20">
           <label for="old_password">New Password</label>
-          <el-input></el-input>
+          <el-input v-model="code.passcode" class="pt-5"></el-input>
+        </div>
+        <div class="pt-20">
+          <label for="old_password">New Transaction Code</label>
+          <el-input v-model="code.transaction_code" class="pt-5"></el-input>
         </div>
         <div class="change_pass_btn">
-          <el-button type="primary" @click="changePassword"
+          <el-button
+            type="primary"
+            :loading="changeLoader"
+            @click="changePassword"
             >Change Password</el-button
           >
         </div>
@@ -32,7 +39,12 @@ export default Vue.extend({
 
   data() {
     return {
-      admin: '',
+      admin: {} as any,
+      changeLoader: false as boolean,
+      code: {
+        passcode: '' as string,
+        transaction_code: '' as string,
+      },
     }
   },
   async created() {
@@ -41,15 +53,32 @@ export default Vue.extend({
       const users = await this.$axios.get(`/users`)
 
       const admin = users.data.data.find((user: any) => user._id === id)
+      console.log(admin)
       this.admin = admin
     } catch (error) {}
   },
   methods: {
-    //  async changePassword() {
-    //     try {
-    //     } catch (error) {
-    //     }
-    //   }
+    open2(message: string, type: any) {
+      this.$message({
+        message,
+        type,
+      })
+    },
+    async changePassword() {
+      this.changeLoader = true
+      try {
+        const depositorsResponse = await this.$axios.put(
+          `/users/${this.admin._id}`,
+          this.code
+        )
+        console.log(depositorsResponse)
+        this.open2('Admin updated successful!', 'success')
+        this.changeLoader = false
+      } catch (error) {
+        this.changeLoader = false
+        console.error(error)
+      }
+    },
   },
 })
 </script>
@@ -61,16 +90,34 @@ $laptop_screen: 1024px;
 
 .vault_content_container {
   padding-top: 20px;
-  height: 500px;
+  height: 100vh;
   margin: 20px 20px 0 310px;
-  @media (max-width: $medium_screen) {
+  @media (max-width: $laptop_screen) {
     margin-left: 210px;
+  }
+  @media (max-width: $small_screen) {
+    width: 100%;
+    margin: 0;
+    margin-top: 40px;
+  }
+  h3 {
+    padding: 10px;
   }
   .vault_content {
     margin-top: 20px;
     padding: 20px;
     padding-bottom: 40px;
     height: 350px;
+    width: 60%;
+    margin: 0 auto;
+    @media (max-width: $medium_screen) {
+      margin: 10px;
+      width: 100%;
+    }
+    @media (max-width: $small_screen) {
+      margin: 0;
+      // width: 100%;
+    }
     .password_content {
       width: 80%;
       margin: 0 auto;

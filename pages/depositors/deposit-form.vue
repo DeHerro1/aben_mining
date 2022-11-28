@@ -147,7 +147,6 @@
                 <el-form-item label="Quantity">
                   <el-input
                     v-model="registerForm.quantity"
-                    type="number"
                     placeholder="Quantity of item"
                   >
                   </el-input>

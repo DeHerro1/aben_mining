@@ -55,7 +55,7 @@
     <!-- <el-card class="mt-20"> -->
     <el-card class="mt-20 depo_table" style="min-height: 400px">
       <el-table
-        v-loading="depositors.length < 1"
+        v-loading="loading"
         :data="depositors"
         stripe
         :default-sort="{ prop: 'name', order: 'descending' }"
@@ -237,10 +237,10 @@ export default Vue.extend({
         const depositorsResponse = await this.$axios.get('/deposits')
         console.log(depositorsResponse)
         this.depositors = depositorsResponse.data.data
-
+        console.log('depositors', this.depositors)
         this.loading = false
       } catch (error) {
-        console.log(error)
+        console.error(error)
         this.loading = false
       }
     },
