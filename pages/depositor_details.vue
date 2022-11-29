@@ -120,8 +120,10 @@
             v-model="depositor.status"
             placeholder="Select"
           >
-            <el-option label="Pending" value="pending"> </el-option>
-            <el-option label="Delivered" value="delivered"> </el-option>
+            <el-option label="In-transit" value="in-transit"> </el-option>
+            <el-option label="Rejected" value="rejected"> </el-option>
+            <el-option label="With customs" value="with-customs"> </el-option>
+            <el-option label="On hold" value="on-hold"> </el-option>
           </el-select>
         </section>
       </section>

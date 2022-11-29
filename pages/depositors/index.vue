@@ -150,10 +150,7 @@
               @click="getDepositorDetails(scope.row._id)"
             >
               <span>
-                <el-tag
-                  :type="scope.row.status == 'pending' ? 'warning' : 'success'"
-                  >{{ scope.row.status }}</el-tag
-                >
+                <el-tag type="warning">{{ scope.row.status }}</el-tag>
               </span>
             </div>
           </template>
