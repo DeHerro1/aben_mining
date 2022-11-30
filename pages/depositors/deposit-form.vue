@@ -354,7 +354,7 @@ export default Vue.extend({
           deposit_date: form.deposit_date,
           next_of_kin: form.kin,
           relationship: form.kin_relationship,
-          status: 'pending',
+          status: 'in-transit',
           password: form.password,
           confirm_password: form.confirm_password,
         }

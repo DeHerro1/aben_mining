@@ -45,10 +45,7 @@
         <section>
           <p>Tracking Status:</p>
           <p>
-            <el-tag
-              :type="depositor.status == 'pending' ? 'warning' : 'success'"
-              >{{ depositor.status }}</el-tag
-            >
+            <el-tag type="warning">{{ depositor.status }}</el-tag>
           </p>
         </section>
         <section class="deposit_text">
