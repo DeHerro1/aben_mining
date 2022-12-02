@@ -45,7 +45,7 @@ export default {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     // http://localhost:8000/api/v1
     // baseURL: 'https://newapi.dwellys.com/api',
-    baseURL: 'https://boiling-badlands-97720.herokuapp.com/api/v1',
+    baseURL: 'https://service-api-model.onrender.com/api/v1',
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
