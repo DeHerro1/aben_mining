@@ -45,8 +45,16 @@
         <section>
           <p>Tracking Status:</p>
           <p>
-            <el-tag type="warning">{{ depositor.status }}</el-tag>
+            <el-tag type="warning" size="mini">{{ depositor.status }}</el-tag>
           </p>
+        </section>
+        <section>
+          <p>Status Description</p>
+          <p>{{ depositor.current_loc }}</p>
+        </section>
+        <section>
+          <p>Destination</p>
+          <p>{{ depositor.destination }}</p>
         </section>
         <section class="deposit_text">
           <p>Next of Kin:</p>
@@ -82,7 +90,6 @@ export default Vue.extend({
       const id = localStorage.getItem('5%5od4po43')
       const deposits = await this.$axios.get('/deposits')
       const deposit = deposits.data.data.find((depo: any) => depo._id === id)
-      console.log(deposit)
       this.depositor = deposit
       this.loading = false
     } catch (error) {

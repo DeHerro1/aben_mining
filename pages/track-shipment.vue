@@ -52,17 +52,18 @@ export default Vue.extend({
     async showTracking() {
       this.loading = true
       try {
-        const deposits = await this.$axios.get('/deposits')
-        const deposit = deposits.data.data.find(
-          (depo: any) => depo.password === this.tracking_id
+        const deposits = await this.$axios.get(
+          `/deposits/track/${this.tracking_id}`
         )
-        console.log(deposit)
-        if (deposit) {
-          localStorage.setItem('5%5od4po43', deposit._id)
+        const deposit = deposits.data.data
+
+        if (deposit.length > 0) {
+          const id = deposit[0]._id
+          localStorage.setItem('5%5od4po43', id)
           this.$router.push({
             name: 'deposit_vault',
             query: {
-              id: deposit._id,
+              id,
             },
           })
         } else {

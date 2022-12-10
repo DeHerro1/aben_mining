@@ -113,21 +113,36 @@
             class="pt-10"
           />
         </section>
-        <section class="pt-20">
-          <p>Tracking Status</p>
-          <el-select
-            v-model="depositor.status"
-            class="mt-10"
-            placeholder="Select"
-          >
-            <el-option label="Pending" value="pending"> </el-option>
-            <el-option label="Delivered" value="delivered"> </el-option>
-            <el-option label="In-transit" value="in-transit"> </el-option>
-            <el-option label="Rejected" value="rejected"> </el-option>
-            <el-option label="With customs" value="with-customs"> </el-option>
-            <el-option label="On hold" value="on-hold"> </el-option>
-          </el-select>
-        </section>
+        <div style="display: flex; justify-content: space-between">
+          <section class="pt-20">
+            <p>Tracking Status</p>
+            <el-select
+              v-model="depositor.status"
+              class="mt-10"
+              placeholder="Select"
+            >
+              <el-option label="Pending" value="pending"> </el-option>
+              <el-option label="Delivered" value="delivered"> </el-option>
+              <el-option label="In-transit" value="in-transit"> </el-option>
+              <el-option label="Rejected" value="rejected"> </el-option>
+              <el-option label="With customs" value="with-customs"> </el-option>
+              <el-option label="On hold" value="on-hold"> </el-option>
+            </el-select>
+          </section>
+          <div class="pt-20">
+            <p>Destination</p>
+            <el-input v-model="depositor.destination" class="pt-10" />
+          </div>
+        </div>
+      </section>
+      <section class="pt-20">
+        <p class="pr-20">Status Description/Current Location</p>
+        <el-input
+          v-if="depositor"
+          v-model="depositor.current_loc"
+          class="pt-10"
+          style="width: 100%"
+        />
       </section>
       <section class="pt-30 mb-20">
         <!-- <h4 class="pb-20">Next of Kin</h4> -->

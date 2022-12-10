@@ -173,6 +173,39 @@
                   >
                   </el-input>
                 </el-form-item>
+
+                <el-form-item label="Item Status">
+                  <el-select
+                    v-model="registerForm.status"
+                    class="mt-10"
+                    placeholder="Select"
+                  >
+                    <el-option label="Pending" value="pending"> </el-option>
+                    <el-option label="Delivered" value="delivered"> </el-option>
+                    <el-option label="In-transit" value="in-transit">
+                    </el-option>
+                    <el-option label="Rejected" value="rejected"> </el-option>
+                    <el-option label="With customs" value="with-customs">
+                    </el-option>
+                    <el-option label="On hold" value="on-hold"> </el-option>
+                  </el-select>
+                </el-form-item>
+
+                <el-form-item label="Current Location">
+                  <el-input
+                    v-model="registerForm.current_loc"
+                    placeholder="describe current location"
+                  >
+                  </el-input>
+                </el-form-item>
+
+                <el-form-item label="Destination">
+                  <el-input
+                    v-model="registerForm.destination"
+                    placeholder="destination country"
+                  >
+                  </el-input>
+                </el-form-item>
               </div>
             </div>
             <hr class="hr_rule" />
@@ -288,6 +321,9 @@ export default Vue.extend({
         item_value: '' as string,
         quantity: '' as string,
         deposit_date: '' as string,
+        status: '' as string,
+        current_loc: '' as string,
+        destination: '' as string,
         kin: '' as string,
         kin_relationship: '' as string,
         confirm_password: '',
@@ -354,7 +390,9 @@ export default Vue.extend({
           deposit_date: form.deposit_date,
           next_of_kin: form.kin,
           relationship: form.kin_relationship,
-          status: 'in-transit',
+          status: form.status,
+          destination: form.destination,
+          current_loc: form.current_loc,
           password: form.password,
           confirm_password: form.confirm_password,
         }
