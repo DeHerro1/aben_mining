@@ -26,7 +26,7 @@
         </section>
         <section>
           <p>Date Deposited:</p>
-          <p>{{ $moment(depositor.createdAt).format('DD MMM, YY') }}</p>
+          <p>{{ $moment(depositor.deposit_date).format('DD MMM, YY') }}</p>
         </section>
 
         <section class="deposit_text">
