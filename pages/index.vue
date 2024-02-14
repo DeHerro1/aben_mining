@@ -115,23 +115,6 @@
           </div>
         </div>
       </div>
-      <div class="home_office_container">
-        <div
-          v-for="(office, index) in homeOffice"
-          :key="index"
-          class="home_office"
-        >
-          <section class="home_office_icon">
-            <i :class="office.icon"></i>
-          </section>
-          <section>
-            <h3>{{ office.title }}</h3>
-            <div>
-              <p>{{ office.main_text }}</p>
-            </div>
-          </section>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -184,25 +167,7 @@ export default Vue.extend({
             'Forwarding cargo by haulage solutions such as road and rail offer faster time-to-market than ocean shipping at a lower cost than air shipping.',
         },
       ],
-      homeOffice: [
-        {
-          main_text: 'accessgroups2@gmail.com',
-          title: 'Email Address',
-          icon: 'el-icon-message',
-        },
-        {
-          main_text:
-            '800 W 1st St Suite 401, Los Angeles, CA 90012, United States',
-          title: 'Main Office',
-          icon: 'el-icon-location',
-        },
-        {
-          main_text:
-            'Level 1, Devonshire House One Mayfair Place London UK W1J 8AJ',
-          title: 'UK Branch',
-          icon: 'el-icon-place',
-        },
-      ],
+
       tracking_id: '' as string,
     }
   },
@@ -459,52 +424,6 @@ $laptop_screen: 1024px;
         // height: 50px;
         // padding: 10px;
         // top: -50px;
-      }
-    }
-  }
-  .home_office_container {
-    margin: 30px auto;
-    width: 90%;
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-    @media (max-width: $small_screen) {
-      display: flex;
-      margin: 30px 0;
-      width: 100%;
-      flex-direction: column;
-    }
-    .home_office {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 230px;
-      width: 100%;
-      text-align: center;
-      @media (max-width: $small_screen) {
-        height: 200px;
-      }
-      p {
-        width: 90%;
-        margin: 10px auto;
-        @media (max-width: $small_screen) {
-          width: 100%;
-        }
-      }
-      .home_office_icon {
-        margin-bottom: 20px;
-        background-color: #54595f;
-        width: 80px;
-        height: 80px;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
-        border-radius: 50%;
-
-        i {
-          font-size: 3rem;
-          color: #fff;
-        }
       }
     }
   }

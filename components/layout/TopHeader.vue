@@ -3,13 +3,10 @@
   <div class="top_header">
     <div class="section top_header_sub">
       <div class="top_header_text">
-        <p class="contact_top_header">
-          <i class="el-icon-phone mr-5"></i>+44 7537 184028
+        <p>
+          Moving freight for almost any industry to nearly every part of the
+          globe
         </p>
-        <p class="contact_top_header">
-          <i class="el-icon-phone mr-5"></i>+1 (252) 419-6679
-        </p>
-        <p><i class="el-icon-message mr-5"></i>accessgroups2@gmail.com</p>
       </div>
     </div>
   </div>
