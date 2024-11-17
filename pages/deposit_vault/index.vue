@@ -49,7 +49,7 @@
           </p>
         </section>
         <section>
-          <p>Status Description</p>
+          <p>Current Location:</p>
           <p>{{ depositor.current_loc }}</p>
         </section>
         <section>
@@ -101,7 +101,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-$small_screen: 426px;
+$small_screen: 430px;
 $medium_screen: 769px;
 $laptop_screen: 1024px;
 

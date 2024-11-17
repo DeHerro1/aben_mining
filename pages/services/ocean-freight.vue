@@ -187,7 +187,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-$small_screen: 426px;
+$small_screen: 430px;
 $medium_screen: 769px;
 $laptop_screen: 1024px;
 .about_header {

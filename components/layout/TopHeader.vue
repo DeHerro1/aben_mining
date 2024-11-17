@@ -24,7 +24,7 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss" scoped>
-$small_screen: 426px;
+$small_screen: 430px;
 $laptop_screen: 1024px;
 .top_header {
   // background: #54595f;

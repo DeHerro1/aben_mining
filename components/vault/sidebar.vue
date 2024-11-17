@@ -117,7 +117,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-$small_screen: 426px;
+$small_screen: 430px;
 $medium_screen: 769px;
 $laptop_screen: 1024px;
 .sidebar_logo_div {
@@ -143,6 +143,17 @@ $laptop_screen: 1024px;
     left: 10px;
     background: none;
     height: fit-content;
+  }
+
+  // iphone 14 pro max
+  @media (max-width: 430px) {
+    width: 50px !important;
+    position: absolute;
+    margin-top: 10px;
+    left: 10px;
+    background: none;
+    height: fit-content;
+    z-index: 10;
   }
 }
 .mobile_nav {
