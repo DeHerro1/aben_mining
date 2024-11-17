@@ -1,14 +1,14 @@
 <template>
-  <div class="vault_content_container" v-loading="loading">
+  <div v-loading="loading" class="vault_content_container">
     <!-- <h3>Customer Information</h3> -->
     <h3 class="depositor_details_header">Depositor's Details</h3>
     <el-card class="box-card vault_content">
       <div class="vault_content_header">
         <p><b>Deposit Code: </b> *****</p>
-        <p>
+        <!-- <p>
           <b>Deposit Created:</b>
           {{ $moment(depositor.createdAt).format('DD MMM, YY') }}
-        </p>
+        </p> -->
       </div>
       <div class="vault_deposit_status">
         <section class="deposit_text">
