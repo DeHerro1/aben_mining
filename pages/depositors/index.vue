@@ -98,13 +98,13 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="Phone Number">
+        <el-table-column label="Tracking Number">
           <template slot-scope="scope">
             <div
               style="cursor: pointer"
               @click="getDepositorDetails(scope.row._id)"
             >
-              <span> {{ scope.row.phone }} </span>
+              <span> {{ scope.row.id_number }} </span>
             </div>
           </template>
         </el-table-column>

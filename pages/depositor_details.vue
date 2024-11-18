@@ -47,26 +47,10 @@
             </el-date-picker>
           </div>
         </section>
-        <section class="pt-20">
-          <p>Country</p>
-          <el-input
-            v-if="depositor"
-            v-model="depositor.country"
-            class="pt-10"
-          />
-        </section>
-        <section class="pt-20">
-          <p>City</p>
-          <el-input v-if="depositor" v-model="depositor.city" class="pt-10" />
-        </section>
-        <section class="pt-20">
-          <p>State</p>
-          <el-input v-if="depositor" v-model="depositor.state" class="pt-10" />
-        </section>
       </div>
-      <!-- <el-divider></el-divider> -->
+      <el-divider></el-divider>
       <section class="pt-30">
-        <!-- <h4 class="pb-20">Item Details</h4> -->
+        <h4 class="pb-20">Item Details</h4>
         <div class="">
           <section class="pt-20">
             <p class="pr-20">Item Type</p>
@@ -76,6 +60,7 @@
               class="pt-10"
             />
           </section>
+          <br />
           <section class="">
             <p>Item Value</p>
             <el-input
@@ -84,6 +69,7 @@
               class="pt-10"
             />
           </section>
+          <br />
           <section class="">
             <p>Deposit Date</p>
             <el-date-picker
@@ -94,6 +80,7 @@
             >
             </el-date-picker>
           </section>
+          <br />
           <section class="">
             <p>Item Quantity</p>
             <el-input
@@ -102,6 +89,7 @@
               class="pt-10"
             />
           </section>
+          <br />
         </div>
       </section>
       <section class="pt-30">
@@ -113,7 +101,40 @@
             class="pt-10"
           />
         </section>
-        <div style="display: flex; justify-content: space-between">
+
+        <section class="pt-20">
+          <p>From/Depature location</p>
+          <el-input v-if="depositor" v-model="depositor.city" class="pt-10" />
+        </section>
+
+        <div class="pt-20">
+          <p>Destination</p>
+          <el-input v-model="depositor.destination" class="pt-10" />
+        </div>
+        <br />
+        <section class="pt-20">
+          <p class="pr-20">Current Location</p>
+          <el-input
+            v-if="depositor"
+            v-model="depositor.current_loc"
+            class="pt-10"
+            style="width: 100%"
+          />
+        </section>
+
+        <br />
+        <section class="pt-20">
+          <p class="pr-20">Tracking ID</p>
+          <el-input
+            v-if="depositor"
+            v-model="depositor.id_number"
+            class="pt-10"
+            style="width: 100%"
+            placeholder="AGS-TRCK45892WED43-02"
+          />
+        </section>
+
+        <div>
           <section class="pt-20">
             <p>Tracking Status</p>
             <el-select
@@ -124,26 +145,12 @@
               <el-option label="Pending" value="pending"> </el-option>
               <el-option label="Delivered" value="delivered"> </el-option>
               <el-option label="In-transit" value="in-transit"> </el-option>
-              <el-option label="Rejected" value="rejected"> </el-option>
-              <el-option label="With customs" value="with-customs"> </el-option>
-              <el-option label="On hold" value="on-hold"> </el-option>
+              <el-option label="Rejected" value="shipped"> </el-option>
             </el-select>
           </section>
-          <div class="pt-20">
-            <p>Destination</p>
-            <el-input v-model="depositor.destination" class="pt-10" />
-          </div>
         </div>
       </section>
-      <section class="pt-20">
-        <p class="pr-20">Status Description/Current Location</p>
-        <el-input
-          v-if="depositor"
-          v-model="depositor.current_loc"
-          class="pt-10"
-          style="width: 100%"
-        />
-      </section>
+
       <section class="pt-30 mb-20">
         <!-- <h4 class="pb-20">Next of Kin</h4> -->
         <div class="">
